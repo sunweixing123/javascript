@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<ul id="n1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+    var oul=document.getElementById("n1");
+    oul.onclick=function(e){
+       var target;
+       if(e){
+           target=e.target;
+       }else{
+            target=window.event.srcElement;
+       }
+       console.log(target.innerHTML);
+    };
+
+//   oUl.onclick = function(e){
+//       //获取事件源
+//       var target;
+//       if(e){
+//           target = e.target;
+//       }else{
+//           target = window.event.srcElement;
+//       }
+//       console.log(target.innerHTML);
+//   };
+</script>
+</body>
+</html>
