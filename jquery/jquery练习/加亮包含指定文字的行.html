@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加亮行</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            width: 300px;
+        }
+        td{
+            width: 100px;
+            font-size:10px;
+            padding: 5px;
+        }
+        .even{
+            background:#FFF38F;
+        }
+        .odd{
+            background:#FFFFEE;
+        }
+        .selected{
+            background:#FF6500;color:#fff;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>暂住地</td></tr>
+    </thead>
+    <tr><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>李四</td><td>女</td><td>浙江宁波</td></tr>
+    <tr><td>王五</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>赵六</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>rain</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>maxman</td><td>男</td><td>浙江宁波</td></tr>
+</table>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        $("tbody>tr:even").addClass("even");
+        $("tbody>tr:odd").addClass("odd");
+        $("tr:contains(王五)").addClass("selected");
+    })
+</script>
+</body>
+</html>
