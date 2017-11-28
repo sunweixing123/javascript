@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .container{
+            width: 300px;
+            height: 150px;
+            margin:200px 400px;
+            border:1px #000 solid;
+        }
+        .tab{
+            height: 30px;
+        }
+        .tab{
+            text-align: center;
+        }
+        .tab li{
+            display: block;
+            height: 100%;
+            width: 33%;
+            background-color: #000;
+            color: #ffffff;
+            float: left;
+            margin-right: 1px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #content div{
+            display: none;
+        }
+        #content .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="tab">
+        <li class="selected">选项1</li>
+        <li>选项2</li>
+        <li>选项3</li>
+    </ul>
+    <div id="content">
+        <div class="selected">选项1</div>
+        <div>选项2</div>
+        <div>选项3</div>
+    </div>
+</div>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        $(".tab li").on("click",function(){
+            $(this).add($("#content div").eq($(this).index())).addClass("selected").siblings().removeClass("selected");
+        })
+    })
+</script>
+</body>
+</html>
