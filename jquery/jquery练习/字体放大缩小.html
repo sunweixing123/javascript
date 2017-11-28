@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体放大缩小</title>
+    <style>
+        .container{
+            position: absolute;
+            top: 100px;
+            left: 500px;
+        }
+        span{
+            height: 20px;
+            width: 60px;
+            background-color: #cccccc;
+            float: left;
+            margin-right:3px;
+            font-size: 13px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        .index{
+            height: 150px;
+            width: 400px;
+            background-color: #000;
+            color: #ffffff;
+            position: absolute;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <span class="bigger">放大</span>
+        <span class="smaller">缩小</span>
+    </div>
+    <div class="index">
+        This is some text. This is some text. This is some text. This is some text. This
+        is some text. This is some text. This is some text. This is some text. This is some
+        text. This is some text. This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text. This is some text. This
+        is some text. This is some text.
+    </div>
+</div>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        $("span").on("click",function(){
+            var thisele=$(".index").css("font-size");
+            var textfontsize=parseFloat(thisele,10);
+            var unit=thisele.slice(-2);
+            var cname=$(this).attr("class");
+            if(cname=="smaller"){
+                textfontsize-=2;
+            }
+            if(cname=="bigger"){
+                textfontsize+=2;
+            }
+            $(".index").css("font-size",textfontsize+unit);
+        });
+    })
+</script>
+</body>
+</html>
