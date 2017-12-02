@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡</title>
+    <style>
+        #n1{
+            width: 400px;
+            height: 400px;
+            background-color: #ff0000;
+        }
+        #n2{
+            width: 200px;
+            height: 200px;
+            background-color: #00ff00;
+        }
+        #n3{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+<div id="n1">
+    <div id="n2">
+        <div id="n3">
+
+        </div>
+    </div>
+</div>
+<script>
+    on1=document.getElementById("n1");
+    on2=document.getElementById("n2");
+    on3=document.getElementById("n3");
+//    on1.onclick=function(){
+//        console.log("n1");
+//    };
+//    on2.onclick=function(){
+//        console.log("n2");
+//    };
+//    on3.onclick=function(){
+//        console.log("n3");
+//    };
+//    标准浏览器阻止冒泡的方法
+//    on1.addEventListener("click",function(e){
+//        console.log("n1");
+//        e.stopPropagation();
+//    })
+//    on2.addEventListener("click",function(e){
+//        console.log("n2");
+//        e.stopPropagation();
+//    })
+//    on3.addEventListener("click",function(e){
+//        console.log("n3");
+//        e.stopPropagation();
+//    })
+//    IE浏览器阻止冒泡方法
+//    on1.attachEvent("click",function(){
+//        console.log("n1");
+//        window.event.cancelBubble=true;
+//    });
+//    on2.attachEvent("click",function(){
+//        console.log("n2");
+//        window.event.cancelBubble=true;
+//    });
+//    on3.attachEvent("click",function(){
+//        console.log("n3");
+//        window.event.cancelBubble=true;
+//    });
+//    通用阻止冒泡方法
+    addEvent(on1,"click",function(){
+        alert(123);
+    });
+    function addEvent(elem,type,handler){
+        if(elem.addEventListener){
+            elem.addEventListener(type,handler);
+        }
+        else if(event.attachEvent){
+            event.attach("on"+type,handler);
+        }
+        else{
+            elem["on"+type]=handler;
+        }
+    }
+
+</script>
+</body>
+</html>
