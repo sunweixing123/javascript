@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input  {
+            height: 16px;
+            border:1px solid #ccc;
+        }
+        .container{
+            padding: 2px;
+        }
+        .container label{
+            float: left;
+            font-size: 10px;
+            width: 50px;
+            text-align: right;
+            height: 25px;
+            line-height: 25px;
+        }
+        button{
+            cursor: pointer;
+        }
+        .sub {
+            padding-left:100px;
+        }
+        .sub input {
+            margin-right:10px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        .formtips{
+            width: 200px;margin:2px;padding:2px;
+        }
+        .onError{
+            background:#FFE0E9 url(img/reg3.gif) no-repeat 0 center;
+            padding-left:25px;
+        }
+        .onSuccess{
+            background:#E9FBEB url(img/reg4.gif) no-repeat 0 center;
+            padding-left:25px;
+        }
+        .high {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="">
+        <div class="container">
+            <label for="name">用户名:</label>
+            <input type="text" id="name" class="required">
+        </div>
+        <div class="container">
+            <label for="email">邮箱:</label>
+            <input type="text" id="email" class="required">
+        </div>
+        <div class="container">
+            <label for="info">个人资料:</label>
+            <input type="text" id="info">
+        </div>
+    <div class="sub">
+        <input type="submit" value="提交" id="submit1"/>
+        <input type="reset" value="清空" id="reset1"/>
+    </div>
+</form>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+//    required 属性规定必需在提交之前填写输入字段。
+    $(function(){
+        $("form:input .required").each(function(){
+                var $required=$("<strong class='high'>*</strong>");
+                $required.insertAfter(this);
+            }).blur(function(){
+                $(this).nextAll(".formtips").remove();
+            if($(this).is("#name")){
+                if(this.value==""||this.value.length<6){
+                    var errorMsg="请输入至少六位用户名！";
+                    $(this).next().after("<span class='formtips onError'>"+errorMsg+"</span>");
+                }else{
+                    var okMsg="输入正确";
+                    $(this).next().after("<span class='formtips onSuccess'>"+okMsg +"</span>");
+                }
+            }
+//            邮箱
+            if($(this).is="#email"){
+                if(this.value==""){
+                    var erroMsg="邮件地址错误！";
+                    $(this).next().after('<span class="formtips onError">'+errorMsg+'</span>');
+                }else{
+                    var okMsg="输入正确";
+                    $(this).next().after("<span class='formtips onSuccess'>"+okMsg+"</span>")
+                }
+            }
+        }).on(function(){
+                $(this).triggerHandler("blur");
+            }).focus(function(){
+                $(this).triggerHandler("blur");
+            });//end blur
+        $("#submit1").on("click",function(){
+            $("form:input.required").trigger("blur");
+            var numError = $('form .onError').length;
+            if(numError){
+                return false;
+            }
+            alert("注册成功.");
+        });
+        $("#reset1").on("click",function(){
+            $(".formtips").remove();
+        });
+    });
+</script>
+</body>
+</html>
