@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style:none;
+}
+.container{
+    width: 520px;
+    height: 280px;
+    position: relative;
+}
+.imgs{
+    position: relative;
+}
+.imgs img{
+    display: none;
+}
+.imgs .selected{
+    display: block;
+}
+.nav{
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.choose{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.nav li,
+span{
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    line-height: 15px;
+    float: left;
+    color:#fff;
+    margin-left: 3px;
+    cursor: pointer;
+}
+.nav .selected{
+    background-color: #ff3300;
+}
