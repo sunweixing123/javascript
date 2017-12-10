@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证2</title>
+    <style type="text/css">
+    	 *{
+            margin: 0;
+            padding: 0;
+        }
+        input  {
+            height: 16px;
+            border:1px solid #ccc;
+        }
+        .selected1,
+        .selected2{
+            width: 150px;
+            height: 16px;
+            float: right;
+            margin-top:5px;
+            margin-right:1150px;
+            text-align: left;
+            font-size:13px;
+            color: #ff0000;()
+        }
+         .yes1,
+         .yes2{
+             width: 150px;
+             height: 16px;
+             float: right;
+             margin-top:5px;
+             margin-right:1150px;
+             text-align: left;
+             font-size:13px;
+             color: #00ff00;
+             display: none;
+         }
+        .container{
+            padding: 2px;
+        }
+        .container label{
+            float: left;
+            font-size: 10px;
+            width: 50px;
+            text-align: right;
+            height: 25px;
+            line-height: 25px;
+        }
+        button{
+            cursor: pointer;
+        }
+        .sub {
+            padding-left:100px;
+        }
+        .sub input {
+            margin-right:10px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+<form method="post" action="">
+        <div class="container">
+            <label for="name">用户名:</label>
+            <input type="text" id="name" class="required">
+            <div class="selected1">请输入至少六位数字!!!</div>
+            <div class="yes1">输入正确</div>
+        </div>
+        <div class="container">
+            <label for="email">邮箱:</label>
+            <input type="text" id="email" class="required">
+            <div class="selected2">邮箱格式不正确!!!</div>
+            <div class="yes2">输入正确</div>
+        </div>
+        <div class="container">
+            <label for="info">个人资料:</label>
+            <input type="text" id="info">
+        </div>
+    <div class="sub">
+        <input type="submit" value="提交" id="submit1"/>
+        <input type="reset" value="清空" id="reset1"/>
+    </div>
+</form>
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+	    $(":input").focus(function(){
+//	        console.log($(this));
+//             验证用户名
+            if( $(this).is('#name') ){
+                if( this.value.length>= 6 ){
+                    $("form div.selected1").css("display","none");
+                    $("form div.yes1").css("display","block");
+                }
+            }//验证邮件
+            if( $(this).is('#email') ){
+                if(this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value)){
+                    $("form div.selected2").css("display","none");
+                    $("form div.yes2").css("display","block");
+                }
+            }
+            }).blur(function(){
+            //             验证用户名
+            if( $(this).is('#name') ){
+                if( this.value.length>= 6 ){
+                    $("form div.selected1").css("display","none");
+                    $("form div.yes1").css("display","block");
+                }else{
+                    $("form div.selected1").css("display","block");
+                    $("form div.yes1").css("display","none");
+                }
+            }//验证邮件
+            if( $(this).is('#email') ){
+                if(this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value)){
+                    $("form div.selected2").css("display","none");
+                    $("form div.yes2").css("display","block");
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>
