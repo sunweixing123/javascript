@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3练习</title>
+    <style>
+        .one{
+            height: 200px;
+            width: 200px;
+            padding: 10px;
+            /*background-color: #ff6700;*/
+            /*transform: rotateX(180deg);*/
+            /*!*div绕X轴旋转一定角度*!*/
+            /*transform: rotateY(120deg);*/
+            /*!*绕y轴旋转*!*/
+            /*border-radius: 50%;*/
+            /*box-shadow:10px 10px 5px #888888;*/
+            /*边框图片*/
+            /*border-image: url(imgs/border.png) 10 10 round;*/
+            background-repeat: no-repeat;
+            background-image: url(imgs/border.png);
+            /*-webkit-background-size:200px 200px;*/
+            /*background-size:200px 200px;*/
+            background-size:100% 100%;
+            background-origin:content-box;
+            /*背景图片*/
+
+        }
+        .one:hover{
+            transform: rotateY(120deg);
+        }
+        p{
+            margin-left: 20px;
+            font-size: 30px;
+            text-shadow: 5px 5px 5px #f0f000;
+            hanging-punctuation: first;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="one">dividividivivdidvidiv</div>
+
+<p>kobe bryant;</p>
+</body>
+</html>
