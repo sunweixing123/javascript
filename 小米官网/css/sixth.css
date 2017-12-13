@@ -1,7 +1,7 @@
 .sixth {
-    width: 100%;
+    width: 1226px;
+    margin:30px auto;
     position: relative;
-    margin-top: 20px;
 }
 .sixth .warpper{
     position: relative;
@@ -14,7 +14,7 @@
 .sixth .choose{
     position: absolute;
     top: 3px;
-    right:338px;
+    right:0;
 }
 .sixth .prev,
 .sixth .next{
@@ -28,7 +28,7 @@
 .sixth .wrapper-1{
     position: absolute;
     top: 40px;
-    left: 336px;
+    left: 0;
     width: 1226px;
     height: 340px;
     overflow: hidden;
