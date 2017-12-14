@@ -34,7 +34,8 @@
     overflow: hidden;
 }
 .sixth ul{
-    left: 0;
+    position: absolute;
+    left: -1226px;
     display: block;
     width: 2476px;
     height: 340px;
