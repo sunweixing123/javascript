@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #n1{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="n1"></div>
+<script>
+    var on1=document.getElementById("n1");
+    on1.onmousedown=function(e){
+        e=e||window.event;
+        var left1=e.clientX-on1.offsetLeft;
+        var top1=e.clientY-on1.offsetTop;
+        document.onmousemove=function(e){
+            e=e||window.event;
+            on1.style.left=e.clientX-left1+"px";
+            on1.style.top=e.clientY-top1+"px";
+        };
+        on1.onmouseup=function(){
+            document.onmousemove=null;
+        }
+    };
+//    var oDrag = document.getElementById('drag');
+    //    oDrag.onmousedown = function (e) {
+    //        e = e || window.event;
+    //        var iDisX = e.clientX - oDrag.offsetLeft;
+    //        var iDisY = e.clientY - oDrag.offsetTop;
+    //
+    //        document.onmousemove = function (e) {
+    //            e = e || window.event;
+    //            oDrag.style.left = e.clientX - iDisX + 'px';
+    //            oDrag.style.top = e.clientY - iDisY + 'px';
+    //        };
+    //
+    //        oDrag.onmouseup = function(){
+    //            document.onmousemove = null;
+    //        };
+    //    };
+
+</script>
+</body>
+</html>
