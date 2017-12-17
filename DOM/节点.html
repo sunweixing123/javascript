@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点</title>
+</head>
+<body>
+<div id="n1">
+    <div class="n2">
+        sun;
+    </div>
+</div>
+<script>
+    on1=document.getElementById("n1");
+    var result=foundclass("n2",n1);
+    console.log(result);
+//通过class寻找元素
+    function foundclass(clasname,context){
+        context=document||context;
+        if(context.getElementsByClassName){
+            return context.getElementsByClassName(clasname);
+        }else{
+            var alist=context.getElementById("*");
+            var result=[];
+            for(var i=0;i<alist.length;i++){
+                if(alist[i].className.indexOf(clasname)!=-1){
+                    result.push(alist[i]);
+                }
+            }
+            return result;
+        }
+    }
+//function getByClassName(clsName, context) {
+//    context = context || document;
+//    if(context.getElementsByClassName){//能力检测
+//        return context.getElementsByClassName(clsName);
+//    }else{
+//        var allList = context.getElementsByTagName('*');
+//        var result = [];
+//        for(var i=0; i<allList.length; i++){
+//            //暂时还不完善，完整的需要用到正则表达式
+//            if(allList[i].className.indexOf(clsName) != -1){
+//                result.push(allList[i]);
+//            }
+//        }
+//        return result;
+//    }
+//}
+</script>
+</body>
+</html>
