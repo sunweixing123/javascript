@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+
+        .container{
+            margin:100px auto;
+            width: 500px;
+            height: 300px;
+            border:2px #ff0000 solid;
+            background:url("imgs/img/2.jpg") ;
+            background-size:100% 100%;
+        }
+        .div1{
+            margin:10px auto;
+            width: 500px;
+            height: 500px;
+            border:2px #00ff00 solid;
+            background:url("imgs/img/3.jpg") no-repeat center/contain;
+        }
+        .div2{
+            width: 400px;
+            height: 50px;
+            margin:10px auto;
+            font-size: 40px;
+            font-weight:bolder;
+            background:url("imgs/img/4.jpg") no-repeat;
+            color: transparent;
+            -webkit-background-clip: text;
+        }
+        .div3{
+            border:2px #ff6700 solid;
+            width: 900px;
+            height: 900px;
+            margin:10px auto;
+            background:url("imgs/img/2.jpg") no-repeat,url('imgs/img/3.jpg ') 300px 300px no-repeat,url('imgs/img/4.jpg') 300px 700px
+          no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+</div>
+
+<div class="div1"></div>
+<div class="div2">sunweixing</div>
+<div class="div3"></div>
+</body>
+</html>
