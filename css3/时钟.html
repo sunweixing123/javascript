@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #clock{
+            width: 400px;
+            height: 400px;
+            margin:200px auto;
+            position: relative;
+        }
+        #dial{
+            width: 400px;
+            height: 400px;
+            border:2px solid;
+            border-radius: 50%;
+            position: relative;
+        }
+        #dial li{
+            height: 6px;
+            width: 2px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left:50%;
+            transform-origin: 0 200px;
+        }
+        #dial li:nth-child(5n+1){
+            height: 10px;
+        }
+        /*.hour{*/
+            /*position: absolute;*/
+            /*height: 30px;*/
+            /*width: 6px;*/
+            /*background-color: #000000;*/
+        /*}*/
+
+
+
+    </style>
+</head>
+<body>
+<div id="clock">
+    <ul id="dial">
+    </ul>
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+
+
+</div>
+
+<script>
+    var oDial=document.getElementById("dial");
+    var oHour=document.getElementById("hour");
+    var oMinute=document.getElementById("minute");
+    var oSecond=document.getElementById("second");
+    for(var i=0;i<60;i++){
+        oDial.innerHTML+='<li style="transform:rotate('+i*6+'deg)"></li>';
+
+    }
+
+</script>
+</body>
+</html>
