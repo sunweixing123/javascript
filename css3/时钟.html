@@ -36,12 +36,34 @@
         #dial li:nth-child(5n+1){
             height: 10px;
         }
-        /*.hour{*/
-            /*position: absolute;*/
-            /*height: 30px;*/
-            /*width: 6px;*/
-            /*background-color: #000000;*/
-        /*}*/
+        #clock div{
+            position: absolute;
+            transform-origin:bottom ;
+        }
+        #hour{
+            position: absolute;
+            left:200px;
+            top: 160px;
+            height: 40px;
+            width: 6px;
+            background-color: #000000;
+        }
+        #minute{
+            position: absolute;
+            left: 201px;
+            top: 120px;
+            height: 80px;
+            width: 4px;
+            background-color: #00ff00;
+        }
+        #second{
+            position: absolute;
+            left: 202px;
+            top: 80px;
+            height: 120px;
+            width: 2px;
+            background-color: #ff0000;
+        }
 
 
 
@@ -51,9 +73,9 @@
 <div id="clock">
     <ul id="dial">
     </ul>
-    <div class="hour"></div>
-    <div class="minute"></div>
-    <div class="second"></div>
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second"></div>
 
 
 </div>
@@ -67,7 +89,20 @@
         oDial.innerHTML+='<li style="transform:rotate('+i*6+'deg)"></li>';
 
     }
+    run();
+    setInterval(function(){
+        run();
+    },1000);
 
+    function run(){
+        var now=new Date();
+        var scd=now.getSeconds();
+        var min=now.getMinutes()+scd/60;
+        var hour=now.getHours()+min/60;
+        oHour.style.transform='rotate('+ hour * 30 + ' deg)';
+        oMinute.style.transform='rotate('+min*6+'deg)';
+        oSecond.style.transform='rotate('+scd*5+'deg)';
+    }
 </script>
 </body>
 </html>
