@@ -12,6 +12,12 @@
     background:#fff;
     margin:0 auto;
 }
+/*字体图标*/
+
+.fifth .iconfont{
+    color:#fff;
+    font-size: 20px;
+}
 .fifth .fifth-1-1{
     height: 100%;
     width: 220px;
