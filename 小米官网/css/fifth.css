@@ -15,8 +15,11 @@
 /*字体图标*/
 
 .fifth .iconfont{
+    display: block;
     color:#fff;
-    font-size: 20px;
+    font-size: 27px;
+    margin-top:20px;
+    margin-left: 20px;
 }
 .fifth .fifth-1-1{
     height: 100%;
@@ -25,18 +28,20 @@
     float: left;
 }
 .fifth .fifth-1-1 li{
-    width: 70px;
+    width: 72px;
     height: 82px;
     float: left;
     position: relative;
-    border-left:1px #cccccc solid;
-    border-bottom:1px #ccc solid;
+}
+.fifth .fifth-1-1 .one{
+    /*border-right:1px #cccccc solid;*/
+    /*border-bottom:1px #ccc solid;*/
 }
 .fifth .fifth-1-1-1 a{
     display:block;
     font-size: 8px;
     color:rgba(255,255,255,0.7);
-    margin:50px 12px;
+    margin:5px 12px;
 }
 .fifth img{
     width: 316px;
