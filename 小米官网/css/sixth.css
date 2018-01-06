@@ -19,8 +19,8 @@
     top: 3px;
     right:0;
 }
-.sixth .prev1,
-.sixth .next1{
+.sixth #prev1,
+.sixth #next1{
     display: inline-block;
     cursor: pointer;
     width: 24px;
@@ -31,10 +31,10 @@
     line-height: 16px;
     text-align: center;
 }
-.sixth .next1:hover{
+.sixth #next1:hover{
     color: #FF5500;
 }
-.sixth .prev1:hover{
+.sixth #prev1:hover{
     color: #FF5500;
 }
 .sixth .wrapper-1{
