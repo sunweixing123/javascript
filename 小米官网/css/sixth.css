@@ -43,9 +43,9 @@
     left: 0;
     width: 1226px;
     height: 340px;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
-.sixth ul{
+.sixth #ul1{
     position: absolute;
     left: -1246px;
     display: block;
