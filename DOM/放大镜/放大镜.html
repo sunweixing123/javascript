@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small,
+        #big{
+            width: 400px;
+            height: 400px;
+            float: left;
+            position: relative;
+        }
+        #big{
+            overflow: hidden;
+        }
+        #choose{
+            height: 100px;
+            width: 100px;
+            background-color: #cccccc;
+            opacity: .6;
+            filter: alpha(opacity=60);
+            position: absolute;
+            cursor: move;
+            left: 0;
+            top: 0;
+        }
+        #big1{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="small">
+    <img src="1.jpg" alt="">
+<div id="choose"></div>
+</div>
+<div id="big">
+    <img src="2.jpg" alt="" id="big1">
+</div>
+<script>
+    osmall=document.getElementById("small");
+    obig=document.getElementById("big");
+    ochoose=document.getElementById("choose");
+    obig1=document.getElementById("big1");
+//    ochoose.onmousedown=function(e){
+//        e=e||window.event;
+//        var left1=e.clientX-ochoose.offsetLeft;
+//        var top1=e.clientY-ochoose.offsetTop;
+//        ochoose.onmousemove=function(e){
+//            e=e||window.event;
+//            ochoose.style.left=e.clientX-left1+"px";
+//            ochoose.style.top=e.clientY-top1+"px";
+//        };
+//        ochoose.onmouseup=function(){
+//            ochoose.onmousemove=null;
+//        };
+    osmall.onmouseover=function(){
+        ochoose.style.display="block";
+        obig.style.display="block";
+    };
+    osmall.onmouseout=function(){
+        ochoose.style.display="none";
+        obig.style.display="none";
+    };
+    osmall.onmousemove=function(e){
+        e=e||window.event;
+        var left = e.clientX - ochoose.offsetWidth / 2;
+        var top = e.clientY - ochoose.offsetHeight / 2;
+        if(left<0){
+            left=0;
+        }
+        if(top<0){
+            top=0;
+        }
+        var leftmax=osmall.offsetWidth-ochoose.offsetWidth;
+        var topmax=osmall.offsetHeight-ochoose.offsetHeight;
+        if(left>leftmax){
+            left=leftmax;
+        }
+        if(top>topmax){
+            top=topmax;
+        }
+        ochoose.style.left=left+"px";
+        ochoose.style.top=top+"px";
+//        大图片移动
+        var fatx=left / leftmax;
+        var faty=top / topmax;
+        obig1.style.left=-fatx*(obig1.offsetWidth-obig.offsetWidth)+"px";
+        obig1.style.top=-faty*(obig1.offsetHeight-obig.offsetHeight)+"px";
+//        obig1.style.left= -fatx * (obig1.offsetWidth - obig.offsetWidth) + 'px';
+//        obig1.style.top=-faty*(obig1.offsetHeight - obig.offsetHeight)+"px";
+    };
+//
+
+//        if(ochoose.style.left<0){
+//            ochoose.style.left=0;
+//        }
+//        if(ochoose.style.top<0){
+//            ochoose.style.top=0;
+//        }
+
+</script>
+</body>
+</html>
