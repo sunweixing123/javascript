@@ -18,8 +18,11 @@
             transition: all 1s;
         }
         #hole:hover{
-            width: 600px;
-            height: 600px;
+            /*width: 600px;*/
+            /*height: 600px;*/
+            -webkit-animation: 1s rainow;
+            -o-animation: 1s rainow;
+            animation: 3s rainow;
         }
         #one{
             display: block;
@@ -36,6 +39,10 @@
             position: absolute;
             right: 30px;
             bottom: 100px;
+        }
+        @keyframes rainow {
+            50%{width:600px;height:600px}
+            100%{width:40px;height:40px}
         }
 
 
