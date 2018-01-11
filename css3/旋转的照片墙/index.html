@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        #container{
+            width: 100%;
+            height: 100%;
+            background: url("img/bg.jpg");
+            position: relative;
+        }
+        #container .img{
+            width: 125px;
+            height: 125px;
+            border: 5px solid #fff;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: -500px;
+            left: -500px;
+            transition: all 1s ease;
+            cursor: pointer;
+        }
+        #container .img span{
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script>
+
+
+
+    const row=4;
+    col=6;
+    num=row*col;
+    let count=0;
+    let ocontainer=document.getElementById('container');
+    let aImg=null;
+    for(let i=0;i<num;i++){
+        let othumbsimg=new Image();
+        othumbsimg.onload=function(){
+            count++;
+            if(count==num*2){
+                loadsuccess();
+            }
+        };
+        othumbsimg.src='img/thumbs/'+(i+1) +'.jpg';
+        let obigimg=new Image();
+        obigimg.onload=function(){
+            count++;
+            if(count==num*2){
+                loadsuccess();
+            }
+        };
+        obigimg.src='img/'+ (i+1) +'.jpg';
+
+    function loadsuccess(){
+        for(let i=0;i<row;i++){
+            for(let j=0;j<col;j++){
+                let odiv=document.createElement('div') ;
+                odiv.style.background='url(img/thumbs/'+ (i*col+j+1) +'.jpg) no-repeat';
+                odiv.className='img';
+                odiv.pos={
+                    x: j,
+                    y: i
+                };
+                odiv.innerHTML='<span></span>';
+                ocontainer.appendChild(odiv);
+            }
+        }
+
+    aImg=ocontainer.getElementsByTagName('div');
+    let colGap=(ocontainer.offsetWidth - aImg[0].offsetWidth*col)/(col + 1);
+    let rowGap=(ocontainer.offsetHeight-aImg[0].offsetHeight*row)/(row+1);
+        for (let i = 0; i < num; i++) {
+            aImg[i].style.transform='rotate(' + Math.floor(Math.random()*40-20) + 'deg)';
+            aImg[i].style.transitionDelay=(num-i)*100+'ms';
+            aImg[i].style.top=(rowGap+aImg[0].offsetHeight)*aImg[i].pos.y+rowGap+'px';
+            aImg[i].style.left=(colGap+aImg[0].offsetWidth)*aImg[i].pos.x+colGap+'px';
+
+
+
+        }
+        let bFlag = true;
+        ocontainer.onclick = function (e) {
+            if (e.currentTarget != e.target) {
+                if (bFlag) {
+
+                }
+            }
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
