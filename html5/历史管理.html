@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史管理</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        ul{
+            height: 30px;
+        }
+        li{
+            margin-right: 10px;
+            float: left;
+        }
+        div{
+            height: 200px;
+            width: 500px;
+        }
+        #div1{
+            background-color: #f000f0;
+        }
+        #div2{
+            background-color: #f00
+        }
+        #div3{
+            background-color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+<ul id="nav">
+    <li><a href="#div1">listone</a></li>
+    <li><a href="#div2">listtwo</a></li>
+    <li><a href="#div3">listthree</a></li>
+</ul>
+
+
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<script src="../js/jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        $('#nav a').on('click',function(){
+            var id=$(this).attr('href');
+            $('body,html').animate(
+                {
+                    scrollTop:$(id).offset().top
+                },500);
+            history.pushState($(id).offset().top,'');
+            return false;
+        })
+    });
+    window.onpopstate=function(e){
+        $('body,html').animate({
+            scrollTop:e.state
+        },500);
+    };
+
+
+</script>
+</body>
+</html>
