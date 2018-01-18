@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+    <li>006</li>
+</ul>
+<script>
+//    var a=5;
+//    function foo(){
+//        console.log(a);
+//        a=6;
+//    }
+//    foo();
+
+//VAR使元素提升 包括function和If语句
+//    var a=5;
+//    function foo(){
+//        console.log(a);
+//        var a=6;  var提升a
+//    }
+//    foo();
+
+//    console.log('1='+a);
+//    var a=5;
+//    function a(){
+//        console.log('2='+a);//var 使a和function同时提升function提升程度更大
+//    }
+//    a=6;
+//    console.log('3='+a);
+//    a();  //此时a是6不是函数因此报错
+
+//var a=5;
+//function foo(){
+//    console.log(a);
+//    if(false){
+//        var a=6;
+//    }
+//}
+//foo();
+
+//两种函数定义方式的不同
+//    foo();
+//    function foo(){
+//        console.log('a');
+//    }
+//    foo();
+//    var foo=function(){
+//        console.log('a');
+//    }
+
+//if(true){
+//    var a=5;
+//}
+//console.log(a);
+
+//let  暂时性死区
+//let a=5;
+//function foo(){
+//    console.log(a);
+//    if(false){
+//        let a=6;
+//    }
+//}
+//foo();
+
+//    throw new Error('lalala');//抛出异常
+
+//输出每个li的索引值
+
+
+    var oul=document.getElementsByTagName('ul');
+    var oli=document.getElementsByTagName('li');
+//    for(var i=0;i<oli.length;i++){
+//        oli[i].index=i;
+//        oli[i].onclick=function(){
+//            console.log(this.index);
+//        }
+//    }
+
+//    闭包
+    for(var i=0;i<oli.length;i++){
+        (function(idx){
+            oli[idx].onclick=function(){
+                console.log(idx);
+            }
+        })(i)
+    }
+
+
+
+</script>
+</body>
+</html>
