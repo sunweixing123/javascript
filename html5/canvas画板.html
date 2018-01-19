@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        #cav{
+            background-color: #000000;
+        }
+
+
+    </style>
+</head>
+<body>
+<canvas id="cav" width="1200" height="600"> </canvas>
+
+
+<script>
+    let Ocav=document.querySelector('#cav');
+    let context=Ocav.getContext('2d');
+    context.strokeStyle='#fff';
+    context.lineWidth='10';
+
+
+    Ocav.onmousedown=function(e){
+        context.beginPath();
+        context.moveTo(e.clientX,e.clientY);
+        Ocav.onmousemove=function(e){
+            context.lineTo(e.clientX,e.clientY);
+            context.stroke();
+        }
+        Ocav.onmouseup=function(){
+            Ocav.onmousemove=null;
+        }
+    }
+
+
+</script>
+</body>
+</html>
