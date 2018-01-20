@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            position: relative;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #svg{
+            /*position: relative;*/
+            background-color: #ffffff;
+        }
+        #sec{
+            /*起点*/
+            stroke-dashoffset: 0;
+            /*终点*/
+            stroke-dasharray: 628;
+            transition: stroke-dashoffset 1s linear;
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+        #time{
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 80px;
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <svg id="svg" width="400" height="400">
+        <circle cx="120" cy="120" r="100" stroke="#43AEFA" stroke-width="20" fill="#fff"> </circle>
+
+        <circle id='sec' cx="120" cy="120" r="100" stroke="#F4F1F1" stroke-width='20' fill="transparent"> </circle>
+    </svg>
+    <div id="time"> 10 </div>
+</div>
+<script>
+    let Osec=document.getElementById("sec");
+    let Otime=document.getElementById('time');
+    let t=10;
+    let timer=setInterval(function(){
+        Otime.innerHTML=t;
+        t--;
+        if(t<0){
+            clearInterval(timer)
+        }else{
+//            表示虚线样式内虚线开始处的距离。
+            Osec.style.strokeDashoffset=628/10 * t - 628;
+        }
+    },1000);
+
+
+</script>
+</body>
+</html>
