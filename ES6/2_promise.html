@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+<script src="jquery-3.2.1.js"></script>
+<script>
+//    let p1=new Promise(function(resolve , reject){
+//        $.get('a.json',{},function(res){
+//            console.log(res);
+//            if(res.a){
+//                resolve(res);
+//            }else{
+//                reject();
+//            }
+//        });
+//    }).then(function(resa){
+//         new Promise(function(resolve , reject){
+//            $.get('b.json',{},function(resb){
+//                console.log(resb);
+//                resolve();
+//            });
+//        });
+//    },function(){
+//        console.log('失败');
+//    }).then(function(){
+//        $.get('c.json',{},function(resb){
+//            console.log(resb);
+//        });
+//    });
+
+    function getPromise(url){
+        return new Promise(function(resove , reject){
+            $.get(url,{},function(res){
+                resove(res);
+            });
+        });
+    }
+    getPromise('a.json').then(function(resa){
+        console.log(resa);
+        return getPromise('b.json');
+    },function(){
+        console.log('loose')
+    }).then(function(resb){
+        console.log(resb);
+        return getPromise('c.json')
+    }).then(function(resc){
+        console.log(resc);
+    })
+
+
+
+</script>
+</body>
+</html>
