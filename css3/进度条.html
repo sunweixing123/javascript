@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条</title>
+    <style>
+        #test{
+            width: 1px;
+            height: 17px;
+            background: #ff0000;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div id="test">0%</div>
+<input type="button" value="run" id="run">
+<script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame;
+    var start=null;
+    var ele=document.getElementById('test');
+    var process=0;
+    function step(){
+      process+=1;
+      ele.style.width=process+'%';
+      ele.innerHTML=process+'%';
+      if(process<100){
+          requestAnimationFrame(step);
+      }
+    }
+    document.getElementById("run").addEventListener('click',function(){
+        ele.style.width='1px';
+        process=0;
+        requestAnimationFrame(step);
+    },false)
+
+</script>
+</body>
+</html>
