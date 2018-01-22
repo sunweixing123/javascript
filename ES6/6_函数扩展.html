@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function foo(a='hello',b){
+        console.log(a,b)
+    }
+    foo({a:undefined,b:'world'});
+
+    function foo1(a='hello',b){
+        console.log(`${a},${b}`)
+    }
+    foo(undefined,'world');
+
+
+    function foo2(a,b,c='5',d){
+        console.log(`${a},${b},${c},${d}`);
+    }
+    foo2(4,5,undefined,7);
+
+    function timer(){
+        this.s1=0;
+        this.s2=0;
+        setInterval(function(){
+            console.log(this);
+        },500);
+        setInterval(()=>{console.log(this);
+        })
+    }
+    let p=new timer();
+    p.
+
+
+
+
+
+</script>
+</body>
+</html>
