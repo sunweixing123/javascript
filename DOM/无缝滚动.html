@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style:none;
+        }
+        #container{
+            width: 520px;
+            height: 280px;
+            border:1px #000 solid;
+            margin:100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #container #imgs{
+            position: absolute;
+            width: 2600px;
+            height: 280px;
+            top: 0;
+            left: 0;
+        }
+        #container img{
+            float: left;
+        }
+        /*#container #tab{*/
+            /*position: absolute;*/
+            /*bottom:10px;*/
+            /*right:10px;*/
+            /*width: 120px;*/
+            /*height: 20px;*/
+            /*cursor: pointer;*/
+        /*}*/
+        /*#container #tab li{*/
+            /*height: 20px;*/
+            /*width: 20px;*/
+            /*margin-right: 10px;*/
+            /*float:left;*/
+            /*color:#fff;*/
+        /*}*/
+        #container #arrows {
+            position: absolute;
+            bottom:10px;
+            left:10px;
+            width: 100px;
+            height: 20px;
+            cursor: pointer;
+        }
+        #container #arrows span{
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+            float:left;
+            color:#ff0000;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/1.jpg" alt="">
+    </div>
+    <!--<ul id="tab">-->
+        <!--<li>1</li>-->
+        <!--<li>2</li>-->
+        <!--<li>3</li>-->
+        <!--<li>4</li>-->
+    <!--</ul>-->
+    <div id="arrows">
+        <span id="left">&lt;</span>
+        <span id="right">&gt;</span>
+    </div>
+</div>
+<script src="../../../fellows19/DOM/wichung-1.0.js"></script>
+<script>
+    window.onload=function(){
+        var timer;
+        var ocontainer=document.getElementById("container");
+        var oimgs=document.getElementById("imgs");
+        var oleft=document.getElementById("left");
+        var oright=document.getElementById("right");
+        var direction=1;
+        play();
+        ocontainer.onmouseover = function () {
+            clearInterval(timer);
+        };
+        ocontainer.onmouseout = function () {
+            play();
+        };
+        function play(){
+            timer=setInterval(function(){
+                oimgs.style.left=(oimgs.offsetLeft-direction)+"px";
+                if(-oimgs.offsetLeft>=oimgs.offsetWidth*0.8){
+                    oimgs.style.left=0;
+                }
+                if(oimgs.offsetLeft>0){
+                    oimgs.style.left=-oimgs.offsetWidth*0.8+"px";
+                }
+            },5);
+        }
+        oleft.onmouseover = oright.onmouseover = function(){
+            if(this === oleft){
+                direction = 1;
+            }else{
+                direction = -1;
+            }
+        };
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+        #container {
+            width: 520px;
+            height: 280px;
+            position: relative;
+            margin: 100px auto;
+        }
+        #imgs img {
+            display: none;
+        }
+        #imgs .selected {
+            display: block;
+        }
+        #tab {
+            height: 20px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #tab .selected{
+            background: #ff6700;
+        }
+        #tab li,
+        #arrows span {
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right: 5px;
+        }
+        #arrows {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img src="img/1.jpg" alt="" class="selected">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+</div>
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrows">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+</div>
+<script>
+    ocontainer=document.getElementById("container");
+    otab=document.getElementById("tab");
+    ali=otab.getElementsByTagName("li");
+    var timer;
+    var oImgs = document.getElementById('imgs');
+    var aImg = oImgs.getElementsByTagName('img');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var inowindex=0;
+    for(var i=0;i<ali.length;i++){
+        ali[i].index=i;
+        ali[i].onmouseover=function(){
+//            for(var i=0;i<ali.length;i++){
+//                ali[i].className="";
+//            }
+//            ali[this.index].className="selected";
+            inowindex=this.index;
+            changeImg();
+        };
+    }
+    oPrev.onclick=oNext.onclick=function(){
+        if(this===oPrev){
+            inowindex--;
+            if(inowindex==-1){
+                inowindex=aImg.length-1
+            }
+        }else{
+            inowindex++;
+            if(inowindex==aImg.length){
+                inowindex=0;
+            }
+        }
+        changeImg();
+    };
+    play();
+    ocontainer.onmouseover = function () {
+        clearInterval(timer);
+    };
+    ocontainer.onmouseout = function () {
+        play();
+    };
+//    自动播放函数
+    function play(){
+        timer=setInterval(function(){
+            oNext.onclick();
+        },1000);
+    }
+//    ...
+    function changeImg() {
+        for (var i = 0; i < ali.length; i++) {
+            ali[i].className = '';
+            aImg[i].className = '';
+        }
+        ali[inowindex].className = 'selected';
+        aImg[inowindex].className = 'selected';
+    }
+</script>
+</body>
+</html>

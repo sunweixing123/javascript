@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息填写</title>
+    <style>
+        body{
+            font:normal 12px/17px Arial;
+        }
+        div{
+            padding:2px;
+        }
+        /*#container{*/
+            /*height: 150px;*/
+            /*border:1px solid #cccccc;*/
+        /*}*/
+        input{
+            width: 12em;
+            border:1px solid #888888;
+        }
+        .focus{
+            border: 1px solid #f00;
+            background: #fcc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="" method="post" id="regForm">
+        <fieldset>
+            <legend>个人信息</legend>
+            <div>
+                <label for="username">名称</label>
+                <input type="text" id="username">
+            </div>
+            <div>
+                <label for="password">密码</label>
+                <input type="text" id="password">
+            </div>
+            <div>
+                <label for="msg">详细信息</label>
+                <textarea id="msg" rows="4" cols="30"></textarea>
+            </div>
+
+        </fieldset>
+
+    </form>
+
+
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        $(":input").focus(function(){//$("input, textarea")
+            $(this).addClass("focus");
+            //this.className = "focus";
+        }).blur(function(){
+            $(this).removeClass("focus");
+        });
+    });
+
+
+</script>
+</body>
+</html>

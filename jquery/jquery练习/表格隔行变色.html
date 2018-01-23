@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格隔行变色</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            width: 300px;
+            /*border:0;border-collapse:collapse;*/
+        }
+        th{
+            /*font:bold 12px/17px Arial;text-align:left;*/
+            /*display: block;*/
+            padding: 4px;
+            border-bottom: 1px #000  solid;
+            /*display: block;*/
+            /*border-bottom:1px #000 solid;*/
+            /*height: 15px;*/
+            /*width: 300px;*/
+        }
+        td{
+            padding: 2px;
+            font-size: 10px;
+            width: 100px;
+            /*font:normal 12px/17px Arial;padding:2px;width:100px;*/
+        }
+        .even{
+            background:#FFF38F;
+        }
+        .odd{
+            background:#FFFFEE;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>暂住地</td></tr>
+    </thead>
+    <tr><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>李四</td><td>女</td><td>浙江宁波</td></tr>
+    <tr><td>王五</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>赵六</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>rain</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>maxman</td><td>男</td><td>浙江宁波</td></tr>
+</table>
+</body>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        $("tbody>tr:odd").addClass("odd");
+//        tbody>tr从第二行开始
+        $("tbody>tr:even").addClass("even");
+    })
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息填写</title>
+    <style>
+        body{
+            font:normal 12px/17px Arial;
+        }
+        div{
+            padding:2px;
+        }
+        input{
+            width: 12em;
+            /*1em=16px*/
+            border: 1px solid #888;
+        }
+        .focus {
+            border: 1px solid #f00;
+            background: #fcc;
+        }
+        /*获取焦点时的样式*/
+    </style>
+</head>
+<body>
+<form action="" method="post" id="regForm">
+    <!--<fieldset>-->
+    <div id="container">
+        <legend>个人基本信息</legend>
+        <div>
+            <label  for="username">名称:</label>
+            <input id="username" type="text" value="名称" />
+        </div>
+        <div>
+            <label for="pass">密码:</label>
+            <input id="pass" type="password" value="密码" />
+        </div>
+        <div>
+            <label for="msg">详细信息:</label>
+            <textarea id="msg" rows="2" cols="20">详细信息</textarea>
+        </div>
+    </div>
+    <!--</fieldset>-->
+</form>
+<script src="jquery-3.2.1.js"></script>
+<script>
+    $(function(){
+        $(":input").focus(function(){
+//            :input是查找所有input元素
+            //$(this).addClass("focus").val(this.value==this.defaultValue?"":this.value);
+            $(this).addClass("focus");
+//            addclass 为每个匹配的元素添加样式名 添加focus样式
+            if($(this).val() == this.defaultValue){
+//               val() 获取匹配的元素集合中第一个元素的当前值或设置匹配的元素集合中每个元素的值。
+//                defaultValue 属性设置或返回文本框的初始内容。
+                $(this).val("");
+                this.value = "";
+//                获取焦点时内容和原来一样则清空
+            }
+        }).blur(function(){
+//            当元素失去焦点时发生 blur 事件
+            $(this).removeClass("focus").val(this.value==""?this.defaultValue:this.value);
+//       removeClass     移除focus样式                          返回文本框初始样式  保留输入的文本
+        });
+    })
+</script>
+</body>
+</html>

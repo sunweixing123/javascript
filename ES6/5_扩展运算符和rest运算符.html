@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+
+<script>
+    function foo(...arg){
+        console.log(arg);
+    }
+    foo(5,6,7,8);
+    foo(5,6,7,8,9);
+
+    let arr1=[1,2];
+    let arr2=[3,4];
+    let arr3=[6,...arr1,4];
+    console.log(arr3);
+
+
+
+
+</script>
+</body>
+</html>

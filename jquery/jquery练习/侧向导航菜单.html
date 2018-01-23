@@ -150,14 +150,37 @@
 <script src="../jquery-3.2.1.js"></script>
 <script>
     $(function(){
-        $(".main").hover(function(){
-            $(this).children("ul").slideDown("slow");
-            $(this).children("a").css("background-image","url('img/up.gif')");
-        },function(){
-            $(this).children("ul").slideUp("slow");
-            $(this).children("a").css("background-image","url('img/down.gif')");
+//        $(".main").hover(function(){
+//            $(this).children("ul").slideDown("slow");
+//            $(this).children("a").css("background-image","url('img/up.gif')");
+//        },function(){
+//            $(this).children("ul").slideUp("slow");
+//            $(this).children("a").css("background-image","url('img/down.gif')");
+//        });
+
+
+//
+//        $(".main").hover(function(){
+//           $(this).children("ul").css("display","block");
+//        },function(){
+//            $(this).children("ul").css("display","none");
+//        });
+        $(".main").on("click",function(){
+            if($(this).children("ul").is(":visible")){
+                $(this).children("ul").slideUp("slow");
+                $(this).children("a").css("background-image","url('img/down.gif')");
+            }else{
+                $(this).children("ul").slideDown("slow");
+                $(this).children("a").css("background-image","url('img/up.gif')");
+            }
         });
 
+
+
+//
+//        $('.main').toggle(function(){
+//
+//        });
 
         $(".hmain").hover(function(){
             $(this).children("ul").slideDown("slow");

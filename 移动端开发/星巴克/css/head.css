@@ -1,0 +1,77 @@
+.head{
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
+.head #nav{
+    height: 56px;
+    width: 40px;
+    position: absolute;
+    left:50px;
+    top: 13px;
+}
+.head #nav img{
+    fill: #CCCCCC;
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.head #nav p{
+    color: #cccccc;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+.head #nav img:hover{
+    fill: #000000;
+}
+.head #nav p:hover{
+    color: #000000;
+}
+.head #logo{
+    width: 73px;
+    height: 73px;
+    margin: 13px auto;
+}
+.head #logo img{
+    width: 73px;
+    height: 73px;
+}
+.head #callout{
+    top: 13px;
+    right: 10px;
+    width: 92px;
+    height: 80px;
+    position: absolute;
+}
+.head #callout #one,#two{
+    float: left;
+}
+.head #callout #one{
+    width: 37px;
+}
+.head #callout #three{
+    float: right;
+}
+.head #callout #head,#two{
+    font-size: 18px;
+    color:#4e4e4e;
+}
+.head #callout #one,#three{
+    font-size: 14px;
+    color:#b89f7a;
+    cursor: pointer;
+}
+.head #callout #two{
+    display: block;
+
+}
+.head #callout #one:hover{
+    color:#000;
+}
+.head #callout #three:hover{
+    color:#000
+}
+/*head结束*/

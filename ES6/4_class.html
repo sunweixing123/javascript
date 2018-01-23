@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class people{
+        constructor(name , age){
+            this.name=name;
+            this.age=age;
+        }
+        eat(){
+            console.log(this.name+'再吃')
+        }
+        bb(){
+            console.log(this.age);
+        }
+    }
+    let p1=new people('sun',22);
+    console.log(p1.name);
+    p1.eat();
+    p1.bb();
+    class coder extends people{
+        constructor (name,age,company){
+            super(name,age);
+            this.company=company;
+        }
+        showcompany(){
+            console.log(`${this.name}在${this.company}工作`);
+        }
+    }
+    let c1=new coder('zs',13,'ali');
+    c1.showcompany();
+
+
+
+</script>
+</body>
+</html>

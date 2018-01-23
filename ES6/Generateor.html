@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function* a() {
+        yield 'hello';
+        console.log('123');
+        yield 'world';
+        return 'ending';
+    }
+    var A=a();
+    console.log(A.next());
+    console.log(A.next());
+    console.log(A.next());
+    console.log(A.next());
+
+</script>
+</body>
+</html>

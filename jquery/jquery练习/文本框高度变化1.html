@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框高度变化</title>
+    <style>
+        .container{
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+        #div1{
+            text-align: center;
+        }
+        span{
+            display: block;
+            background: #000;
+            height: 20px;
+            width: 40px;
+            font-size: 10px;
+            color: #ffffff;
+            margin-right: 5px;
+            float: left;
+            line-height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="" method="post">
+        <div id="div1">
+            <span id="bigger">放大</span>
+            <span id="smaller">缩小</span>
+        </div>
+        <div>
+        <textarea id="comment" rows="8" cols="40">
+            多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化
+            多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化
+        </textarea>
+        </div>
+    </form>
+</div>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    $comment=$("#comment")
+$(function(){
+    $("#bigger").on("click",function(){
+        $comment.height($comment.height()<500?$comment.height()+50:$comment.height());
+    });
+    $("#smaller").on("click",function(){
+        $comment.height($comment.height()>50?$comment.height()-50:$comment.height());
+    })
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雅虎</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .container{
+            width: 589px;
+            height: 209px;
+            border:1px solid #ccc;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+        ul{
+            display: block;
+            height: 100%;
+            width: 40%;
+            float: right;
+            text-align: center;
+        }
+        .selected{
+           background:url(images/on_03.png) no-repeat;
+        }
+        ul li{
+            height: 41px;
+            line-height: 41px;
+            cursor: pointer;
+        }
+        ul a{
+            display: block;
+            width: 210px;
+            border-bottom:1px solid;
+            border-left:1px solid;
+            border-right:1px solid;
+            border-color: #000;
+            font-size: 13px;
+            line-height: 41px;
+            cursor: pointer;
+            float: right;
+            text-decoration: none;
+            color: #000;
+        }
+        ul a.hover{
+            color: #ffffff;
+        }
+        #imgs{
+            width: 60%;
+            height: 100%;
+            float: left;
+        }
+        #imgs img{
+            width: 378px;
+            display: none;
+        }
+        #imgs .selected{
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="imgs">
+        <img src="images/indexfocus20111002a.jpg" alt="" class="selected">
+        <img src="images/indexfocus20111002b.jpg" alt="">
+        <img src="images/indexfocus20111002c.jpg" alt="">
+        <img src="images/indexfocus20111002d.jpg" alt="">
+        <img src="images/indexfocus20111002e.jpg" alt="">
+    </div>
+    <ul>
+        <li class="selected"><a href="#">教教你怎么对付小三</a></li>
+        <li><a href="#">从手可以看出身体哪些疾病</a></li>
+        <li><a href="#">人必须戒掉的17个坏习惯</a></li>
+        <li><a href="#">世界末日理论十大真相</a></li>
+        <li><a href="#">生活中需注意的邪门事</a></li>
+    </ul>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        var nowindex=0;
+        $(function(){
+            var $li=$(".container li");
+            var $imgs = $('#imgs img');
+            $li.on("mouseover",function(){
+                nowindex=$(this).index();
+                $li.eq(nowindex).add($imgs.eq(nowindex)).addClass("selected").siblings().removeClass("selected");
+            });
+        });
+
+
+    </script>
+</div>
+</body>
+</html>
