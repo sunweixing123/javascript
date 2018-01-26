@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            width: 400px;
+            margin: 200px auto;
+        }
+        #app h1{
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+        }
+        #app li{
+            font-size:20px;
+            position: relative;
+            margin-top: 10px;
+            color:#ccc;
+            background-color: #000;
+            height: 70px;
+            line-height:70px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #app li span{
+            position: absolute;
+            left: 15px;
+        }
+        #app li input{
+            margin-top: 30px;
+            position: absolute;
+            right:15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>TODOLIST</h1>
+    <div class="head"><button>删除</button> <button>添加</button></div>
+    <ul id="list">
+        <li v-for="(val,key) in obj" @click="add()"> <input type="radio" value="" @click.stop><span @click.stop="clear()">[x]</span>{{key}}     {{val}}</li>
+    </ul>
+    <h1>{{num}}</h1>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el : "#app",
+            data : {
+                obj: {
+                   clothes:50,
+                    heat:60,
+                    jeans:70,
+                    computer:80,
+                    iphone:6000,
+                    tv:4000
+                },
+                num:0
+            },
+            methods:{
+                add(){
+                    console.log(this);
+                    this.num+=50;
+                },
+                clear(){
+                    this.num-=50;
+                }
+            }
+})
+
+    </script>
+</div>
+</body>
+</html>
