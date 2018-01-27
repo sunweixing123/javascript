@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background-color: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background-color: #f0f000;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="clickhander()"> btn </button>
+    <h1>{{num}}</h1>
+    <button v-on="{mousedown: doThis , mouseup: doThat}">btn2</button>
+
+    <!--事件冒泡阻止-->
+    <div id="div1" @click="clickdiv1">
+        <div id="div2" @click.stop="clickdiv2($event)"></div>
+    </div>
+    <!--阻止网页默认功能-->
+    <a href="http://www.baidu.com" @click.prevent="clickbaidu($event)">百度一下</a>
+
+    <input type="text" @keyup.enter="keyhander">
+
+
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm = new Vue({
+        el : "#app",
+        data : {
+            num:0
+        },
+        methods: {
+            clickhander() {
+                this.num++;
+            },
+            doThis(){
+                console.log("dothis");
+            },
+            doThat() {
+                console.log("dothat");
+            },
+            clickdiv1(){
+                console.log("div1");
+            },
+            clickdiv2(e){
+                console.log("div2");
+            },
+            clickbaidu(e){
+
+            },
+            keyhander(){
+                console.log(123);
+            }
+        },
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(school , index) in schools">{{school}}--{{index}}</li>
+    </ul>
+    <ul>
+        <li v-for="(val,key) in obj ">{{val}}--{{key}}</li>
+    </ul>
+    <ul>
+        <li v-for="obj in arr">{{obj.name}}--{{obj.age}}--{{obj.company}}   </li>
+    </ul>
+    <ul>
+        <li v-for="obj in arrSort">
+            <div v-for="(val , key) in obj">{{val}}--{{key}}</div>
+        </li>
+    </ul>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm = new Vue({
+        el : '#app',
+        data : {
+            schools : ['清华' ,'北大','复旦','东农'],
+            obj:{
+                name:'zhangsan',
+                age:18,
+                company:'baidu'
+            },
+            arr:[{
+                name:'lisi',
+                age:'30',
+                company:'huawei'
+            },{
+                name:'lisi',
+                age:33,
+                company:'ali'
+            },{
+                name:'wangwu',
+                age:34,
+                company:'huawei'
+            }]
+        },
+        computed:{
+            arrSort() {
+                return this.arr.sort(function (a , b){
+                    return a.age - b.age;
+                });
+            }
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
