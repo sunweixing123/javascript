@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            width: 600px;
+            margin: 200px auto;
+        }
+        #app h1{
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+        }
+        #app li{
+            font-size:20px;
+            position: relative;
+            margin-top: 10px;
+            color:#ccc;
+            background-color: #000;
+            height: 70px;
+            line-height:70px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #app li #two{
+            position: absolute;
+            left: 15px;
+        }
+        #app li input {
+            margin-top: 30px;
+            position: absolute;
+            right:15px;
+            cursor: pointer;
+        }
+        #list .selected{
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>TODOLIST</h1>
+    <button type="submit" @click="search()">搜索</button>
+    <input type="text" v-model="keywords">关键字
+    <div class="head"><button @click="clearall()">删除</button>
+        <button @click="addnew()" type="submit">添加</button>
+        <input type="text" v-model="newarrname">商品名称
+        <input type="text" v-model.number="newarrsprice">商品价格
+    </div>
+    <ul id="list">
+        <li :class="{selected:obj.ischoose}" v-for="(obj,index) in arr" @click="add(obj)"> <input type="checkbox" :value="index" @click.stop v-model="newarr"><span id="two" @click.stop="clear(index,obj)">[x]</span>{{obj.name}}     {{obj.sprice}}</li>
+    </ul>
+    <h1>{{num}}</h1>
+</div>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el : "#app",
+            data : {
+                arr:[{
+                    name :'衣服',
+                    sprice:50,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'裤子',
+                    sprice:60,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'帽子',
+                    sprice:70,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'电脑',
+                    sprice:5000,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'iphone',
+                    sprice:6000,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'电视',
+                    sprice:4000,
+                    pd:0,
+                    ischoose:false,
+                }],
+                num:0,
+                newarr:[],
+                newarrname:'',
+                newarrsprice:'',
+                keywords:'',
+            },
+            methods: {
+                add(obj){
+                    obj.ischoose = !obj.ischoose;
+                    if (obj.pd == 0) {
+                        this.num += obj.sprice;
+                        obj.pd = 1;
+                    } else {
+                        this.num -= obj.sprice;
+                        obj.pd = 0;
+                    }
+                },
+                clear(index, obj){
+                    if(obj.pd==1){
+                        this.num-=obj.sprice;
+                    }
+                    this.arr.splice(index, 1)
+                },
+                clearall(){
+                    this.arr = this.arr.filter((item,index)=>{
+                        if(!this.newarr.includes(index)){
+                            return item;
+                        }else if((this.num-item.sprice)>=0&&(item.pd!=0)){
+                            this.num-=item.sprice;
+                        }
+                    });
+                    this.newarr=[];
+                },
+                addnew(){
+                    this.arr.push({
+                        name:this.newarrname,
+                        sprice:this.newarrsprice,
+                        ischoose:false,
+                        pd:0,
+                    });
+                    this.newarrsprice=this.newarrname='';
+                },
+                search(){
+                    this.arr=this.arr.filter((item)=>{
+                        if(item.name.includes(this.keywords)||item.sprice.toString().includes(this.keywords)){
+                            return item;
+                        }
+                    });
+                },
+
+            }
+
+        })
+
+    </script>
+</body>
+</html>
