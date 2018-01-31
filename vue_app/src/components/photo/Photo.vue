@@ -1,11 +1,11 @@
 <template>
 
   <div>
-    <common-header bgcolor="rgb(63, 81, 181)">
-      <span slot="title">photo</span>
-    </common-header>
+    <!--<common-header bgcolor="rgb(63, 81, 181)">-->
+      <!--<span slot="title">photo</span>-->
+    <!--</common-header>-->
     <h1>photo</h1>
-    <common-footer bgcolor="rgb(63, 81, 181)"></common-footer>
+    <!--<common-footer bgcolor="rgb(63, 81, 181)"></common-footer>-->
 
   </div>
 
@@ -13,13 +13,13 @@
 
 
 <script>
-  import CommonHeader from '@/components/common/Header';
-  import CommonFooter from '@/components/common/Footer';
+//  import CommonHeader from '@/components/common/Header';
+//  import CommonFooter from '@/components/common/Footer';
   export default{
-      components:{
-          CommonHeader,
-          CommonFooter
-      }
+//      components:{
+//          CommonHeader,
+//          CommonFooter
+//      }
   }
 </script>
 

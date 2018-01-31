@@ -1,6 +1,6 @@
 <template>
  <div class="header" :style="{background: bgcolor}">
-   <span class="home" :style="{background: bgcolor}">首页</span>
+   <span class="home" :style="{background: bgcolor}" @click="$emit('home')">首页</span>
    <h2 class="title">
       <slot name="title">默认值</slot>
    </h2>
