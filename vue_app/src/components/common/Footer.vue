@@ -31,6 +31,7 @@
 
 .footer li a {
   color: #ccc;
+  outline:none;
 }
 
 .footer li a.router-link-exact-active {

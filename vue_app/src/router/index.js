@@ -6,6 +6,7 @@ import Music from '@/components/music/Music'
 import Photo from '@/components/photo/Photo'
 import '@/assets/css/reset.css'
 import '@/assets/js/rem.js'
+import MovieDetail from '@/components/movie/MovieDetail'
 Vue.use(Router);
 
 export default new Router({
@@ -29,7 +30,10 @@ export default new Router({
     path: '/photo',
     component: Photo,
     beforeEnter(to,from,next){
-      from.name === null ? next('/'):next();
+      from.name === null ? next('/') : next();
     }
+    },{
+    path: '/moviedetail/:movieId',
+    component: MovieDetail
   }]
 })
