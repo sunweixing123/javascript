@@ -1,29 +1,71 @@
 <template>
-
   <div>
-    <!--<common-header bgcolor="rgb(0, 150, 136)">-->
-      <!--<span slot="title">music</span>-->
+    <ul>
+      <li v-for="item in MusicList" :key="item.id" class="music">
+        <router-link :to="'/MusicList/'+item.id">
+          <img :src="item.bg" alt="">
+        </router-link>
 
-    <!--</common-header>-->
-    <h1>music</h1>
-    <!--<common-footer bgcolor="rgb(0, 150, 136)"></common-footer>-->
+      </li>
+    </ul>
+    <!--<ul class="list">-->
+      <!--<h1>摇滚榜</h1>-->
+      <!--<li class="Musiclist" v-for="music in MusicList">-->
+        <!--<div>{{music.rank}}{{music.title}} {{music.language}} {{music.style}}</div>-->
+        <!--<div>热度{{music.hot}}</div>-->
+        <!--<div> 发行时间{{music.publishtime}}</div>-->
+        <!--<div>{{music.ting_uid}}</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+
   </div>
 
 </template>
 
 
 <script>
-//  import CommonHeader from '@/components/common/Header';
-//  import CommonFooter from '@/components/common/Footer';
+  import axios from 'axios';
+
+
   export default{
-//    components:{
-//      CommonHeader,
-//      CommonFooter
-//    }
+      data(){
+          return{
+              MusicList:[],
+          };
+      },
+    methods:{
+          getMusicData(){
+              axios.get('/static/data/musiclist.json').then(res=>{
+                  this.MusicList=res.data.albums;
+              })
+          }
+//      getMusicData(){
+//        axios.get(`${API_PROXY}http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&callback=&from=webapp_music&method=baidu.ting.billboard.billList&type=11&size=10&offset=0`)
+//          .then(res=>{
+//            let list=res.data.song_list;
+//            console.log(res);
+//            this.MusicList=this.MusicList.concat(list);
+//          });
+//      }
+
+
+    },
+    created(){
+          this.getMusicData();
+    }
+
+
   }
 </script>
 
 <style scoped>
+  .music{
+    width: 50%;
+    float: left;
+  }
+  .music img{
+    width: 100%;
+  }
 
 
 </style>
