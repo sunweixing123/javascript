@@ -1,5 +1,5 @@
 <template>
-  <aplayer autoplay :music="MusicList" :showlrc="true" :mutex="true" v-if="loadsuccess"></aplayer>
+  <aplayer autoplay :music="MusicList" :showlrc="true" :mutex="true" v-if="loadsuccess" id="autoplayer"></aplayer>
 </template>
 
 <script>
@@ -26,6 +26,7 @@
                 );
                 this.loadsuccess=true;
             });
+//            console.log(res);
         })
     },
     components:{
@@ -38,6 +39,12 @@
 
 </script>
 <style>
-
+  #autoplayer{
+    margin-top: 1rem;
+  }
 
 </style>
+
+
+
+

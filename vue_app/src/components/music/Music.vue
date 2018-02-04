@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="item in MusicList" :key="item.id" class="music">
-        <router-link :to="'/MusicList/'+item.id">
+        <router-link :to="'/musicdetail/'+item.id">
           <img :src="item.bg" alt="">
         </router-link>
 

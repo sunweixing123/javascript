@@ -1,11 +1,16 @@
 <template>
 
   <div>
-    <!--<common-header bgcolor="rgb(63, 81, 181)">-->
-      <!--<span slot="title">photo</span>-->
-    <!--</common-header>-->
-    <h1>photo</h1>
-    <!--<common-footer bgcolor="rgb(63, 81, 181)"></common-footer>-->
+    <ul class="photodata">
+
+        <li v-for="(photo,index) in photolist" :key="photo.index">
+          <router-link :to="'/photodetail/'+photo.index">
+          <img :src="photo.src" alt="">
+          </router-link>
+        </li>
+
+
+    </ul>
 
   </div>
 
@@ -13,17 +18,35 @@
 
 
 <script>
-//  import CommonHeader from '@/components/common/Header';
-//  import CommonFooter from '@/components/common/Footer';
+import axios from 'axios';
   export default{
-//      components:{
-//          CommonHeader,
-//          CommonFooter
-//      }
+      data(){
+          return{
+              photolist:[]
+          }
+      },
+    methods:{
+
+    },
+    created(){
+          axios.get('/static/data/photodata.json').then(res=>{
+              this.photolist=res.data.photoData;
+              console.log(res);
+          })
+    }
+
   }
 </script>
 
 <style scoped>
+  .photodata{
 
+  }
+  .photodata li{
+    width: 49%;
+    float: left;
+    display: block;
+    border:1px solid #fff;
+  }
 
 </style>

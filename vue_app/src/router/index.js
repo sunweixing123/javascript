@@ -8,6 +8,7 @@ import '@/assets/css/reset.css'
 import '@/assets/js/rem.js'
 import MovieDetail from '@/components/movie/MovieDetail'
 import MusicDetail from '@/components/music/MusicDetail'
+import PhotoDetail from '@/components/photo/PhotoDetail'
 Vue.use(Router);
 
 export default new Router({
@@ -40,5 +41,8 @@ export default new Router({
     {
       path:'/musicdetail/:musicId',
       component:MusicDetail
+    },{
+    path:'/photodetail/:photoindex',
+      component:PhotoDetail
     }]
 })
