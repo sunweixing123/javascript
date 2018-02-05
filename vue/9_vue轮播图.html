@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            position: relative;
+            width: 520px;
+            height: 280px;
+            border:1px solid #000;
+            margin:100px auto;
+        }
+        #images{
+            height: 280px;
+        }
+        #images img{
+            /*display: none;*/
+        }
+        #list{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #list li{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            background-color: #000;
+            color:#fff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            cursor: pointer;
+        }
+        #list .selected{
+            background-color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="images">
+        <img :src="item" alt="" v-for="(item,index) in img" v-show="nowindex==index">
+    </div>
+    <ul id="list">
+        <li v-for="(item,index) in img.length" @mouseover="nowindex=index" :class="{selected : index==nowindex}">{{item}}</li>
+    </ul>
+
+
+</div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            img:[
+                'img/1.jpg',
+                'img/2.jpg',
+                'img/3.jpg',
+                'img/4.jpg',
+            ],
+            nowindex:0,
+
+        },
+        methods:{
+
+        }
+    })
+
+
+</script>
+</body>
+</html>
