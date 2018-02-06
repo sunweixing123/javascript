@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            position: relative;
+            width: 520px;
+            height: 280px;
+            border:1px solid #000;
+            margin:100px auto;
+            overflow: hidden;
+        }
+        #images{
+            width: 200%;
+            position: relative;
+        }
+        #images img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #list{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #list li{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            background-color: #000;
+            color:#fff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            cursor: pointer;
+        }
+        #list .selected{
+            background-color: #ff0000;
+        }
+        .slide-enter{
+           transform:translateX(100%);
+        }
+        .slide-enter-active,
+        .slide-leave-active{
+            transition:transform 1s linear;
+
+        }
+        .slide-leave-to{
+            transform:translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+        <transition-group name="slide" id="images" tag="div" >
+            <img :src="item" alt="" v-for="(item,index) in img" v-show="index==nowindex" :key="index">
+        </transition-group>
+    <ul id="list">
+        <li v-for="(item,index) in img.length" :class="{selected:index==nowindex}" @mouseover="nowindex=index">{{item}}</li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            img:[
+                'img/1.jpg',
+                'img/2.jpg',
+                'img/3.jpg',
+                'img/4.jpg',
+            ],
+            nowindex:0,
+            timer:null
+        },
+        methods:{
+            mousein(){
+
+            },
+            mouseout(){
+
+            },
+            play(){
+                this.timer=setInterval(()=>{
+                    this.nowindex++;
+                    if(this.nowindex==this.img.length){
+                        this.nowindex=0;
+                    }
+                },2000)
+            }
+        },
+        mounted(){
+            this.play();
+        }
+    })
+
+
+</script>
+</body>
+</html>
