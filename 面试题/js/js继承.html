@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function classA(){
+        this.color='Scolor';
+
+    }
+    classA.prototype.saycolor=function(){
+        alert(this.color);
+    };
+    function classB(){
+        classA.call(this);
+    }
+    classB.prototype=new classA();
+    classB.prototype.constructor=classB();
+    classB.prototype.saycolor();
+
+</script>
+</body>
+</html>
