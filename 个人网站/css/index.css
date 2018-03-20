@@ -1,3 +1,8 @@
-h1{
-    color: #ffff00;
+.wrapper{
+    width: 1226px;
+    margin: 0 auto;
+    background: url("../images/7dd19b1c8701a18b6f2e23f9952f07082938fe41.jpg") no-repeat;
+    background-size: 100%;
+    height: 1000px;
+    opacity:0.8;
 }
