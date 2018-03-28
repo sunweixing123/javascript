@@ -8,7 +8,6 @@
 <script>
     function classA(){
         this.color='Scolor';
-
     }
     classA.prototype.saycolor=function(){
         alert(this.color);
@@ -17,6 +16,7 @@
         classA.call(this);
     }
     classB.prototype=new classA();
+    console.log(classB.prototype.constructor);
     classB.prototype.constructor=classB();
     classB.prototype.saycolor();
 
