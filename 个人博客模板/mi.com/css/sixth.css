@@ -1,0 +1,73 @@
+.sixth {
+    width: 1226px;
+    margin:30px auto;
+    position: relative;
+}
+.sixth .warpper{
+    position: relative;
+    width: 1226px;
+    margin:0 auto;
+}
+.sixth p{
+    font-size: 22px;
+    font-weight: 200;
+    /*line-height: 58px;*/
+    color: #333;
+}
+.sixth .choose{
+    position: absolute;
+    top: 3px;
+    right:0;
+}
+.sixth #prev1,
+.sixth #next1{
+    display: inline-block;
+    cursor: pointer;
+    width: 24px;
+    height: 16px;
+    padding: 3px 5px;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+}
+.sixth #next1:hover{
+    color: #FF5500;
+}
+.sixth #prev1:hover{
+    color: #FF5500;
+}
+.sixth .wrapper-1{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 1226px;
+    height: 340px;
+    overflow: hidden;
+}
+.sixth #ul1{
+    position: absolute;
+    left: -1246px;
+    display: block;
+    width: 2476px;
+    height: 340px;
+    /*float: left;*/
+}
+.sixth .fifth{
+    float: right;
+    margin-right: 0;
+    margin-top: 0;
+}
+.sixth ul li{
+    display: block;
+    height: 320px;
+    width: 234px;
+    margin-right:15px;
+    float: left;
+    background-color: #f0f0f0;
+}
+.sixth ul li img{
+    height: 160px;
+    width: 160px;
+    margin: 50px 34px;
+}

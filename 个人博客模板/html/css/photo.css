@@ -1,0 +1,57 @@
+/**{*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+/*body,html{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+#container{
+    width: 710px;
+    background: url('../images/bg.jpg');
+    height: 355px;
+    position: relative;
+}
+#container .img{
+    width: 62px;
+    height: 62px;
+    border: 5px solid #fff;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+#container .img span{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: block;
+    transition: all 1s ease;
+}
+#prev,#next{
+    width: 60px;
+    height: 60px;
+    background: #fff no-repeat center;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    display: none;
+    cursor: pointer;
+
+}
+#prev{
+    background-image: url('../images/prev.png');
+    left: 500px;
+}
+#next{
+    background-image: url("../images/next.png");
+    right: 800px;
+}
+#person{
+    width: 710px;
+    height: 400px;
+    background:url('../images/bg.jpg');
+    position: relative;
+}

@@ -1,0 +1,127 @@
+/*fouth开始*/
+.fouth .fouth-1{
+    height: 100%;
+    width: 1226px;
+    background: #fff;
+    margin:0 auto;
+}
+.fouth{
+    background: #fff;
+    height: 460px;
+    margin-bottom: 10px;
+}
+.fouth .fouth-1-1{
+    width: 18%;
+    height: 100%;
+    float:left;
+    background: #333;
+}
+.fouth .fouth-2-2-2{
+    display: block;
+    padding:13px 25px;
+    color: #ffffff;
+    font-size: 14px;
+}
+.fouth #fouth-2-2-2-1{
+    display: block;
+    padding:13px 25px;
+    color: #ffffff;
+    font-size: 14px;
+}
+.fouth #container{
+    position: relative;
+    float:right;
+    width: 82%;
+    height: 100%;
+    overflow: hidden;
+}
+/*弹出层开始*/
+.fouth #sub-nav{
+    position: absolute;
+    width: 800px;
+    height: 460px;
+    background-color: #ffffff;
+    z-index:1;
+    display: none;
+}
+/*弹出层结束*/
+/*弹出层样式开始*/
+.fouth #sub-nav ul{
+    position: relative;
+    width: 33%;
+    height: 100%;
+    float: left;
+}
+.fouth #sub-nav li{
+    width: 100%;
+    height: 76px;
+    margin-left: 80px;
+    font-size: 15px;
+    line-height: 76px;
+    cursor: pointer;
+}
+.fouth #sub-nav li:hover{
+    color: #FF5500;
+}
+.fouth #sub-nav img{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    left:20px;
+}
+/*弹出层样式结束*/
+.fouth #imgs{
+    position: relative;
+    width: 4020px;
+    height: 460px;
+}
+.fouth #imgs img{
+    float: left;
+    width: 1005px;
+    height: 460px;
+}
+#tab{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+#tab li{
+    height: 6px;
+    width: 6px;
+    background-color: #ccc;
+    float: left;
+    margin:0 5px;
+    cursor: pointer;
+    display: block;
+    border: 2px solid;
+    border-color: #757575;
+    border-radius: 10px;
+}
+#tab .selected{
+    background-color: #ffffff;
+}
+#arrows span{
+    float: left;
+    height: 20px;
+    width: 20px;
+    background: #000;
+    color: #ffffff;
+    margin-right: 10px;
+    line-height: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+#arrows{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+}
+.fouth .fouth-2-2-2:hover{
+    background:#ff6700;
+}
+.fouth .fouth-2-1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*fouth结束*/
