@@ -8,7 +8,11 @@ const ROW = 4,
 let oContainer = document.getElementById('container');
 let oPrev = document.getElementById('prev');
 let oNext = document.getElementById('next');
-
+let oPersons = document.getElementById('persons');
+let oPerson1 = document.getElementById('person1');
+let oPerson2 = document.getElementById('person2');
+let oPerson3 = document.getElementById('person3');
+let num=true;
 let count = 0; // 计数器，表示加载成功的图片的数量
 let aImg = null;
 let colGap, rowGap;
@@ -146,3 +150,23 @@ oPrev.onclick = oNext.onclick = function () {
         oSpan.style.backgroundImage = 'url(images/photo_window/' + nowIndex + '.jpg)';
     }
 };
+
+    oPersons.onclick=function(e){
+            if(num){
+                oPerson1.style.display='none';
+                oPerson2.style.display='none';
+                oPerson3.style.display='none';
+                oPersons.style.backgroundImage='url(images/kobe/kobe5.jpg)';
+                oPersons.style.backgroundColor='#ffa500';
+                console.log(this);
+            }else {
+                oPerson1.style.display = 'block';
+                oPerson2.style.display = 'block';
+                oPerson3.style.display = 'block';
+                oPersons.style.backgroundImage = 'none';
+                oPersons.style.backgroundColor = '#fff';
+            }
+            num=!num;
+    };
+num=!num;
+

@@ -6,13 +6,13 @@
     /*width: 100%;*/
     /*height: 100%;*/
 /*}*/
-#container{
+.ibody #container{
     width: 710px;
     background: url('../images/bg.jpg');
     height: 355px;
     position: relative;
 }
-#container .img{
+.ibody #container .img{
     width: 62px;
     height: 62px;
     border: 5px solid #fff;
@@ -23,14 +23,14 @@
     transition: all 1s ease;
     cursor: pointer;
 }
-#container .img span{
+.ibody #container .img span{
     width: 100%;
     height: 100%;
     opacity: 0;
     display: block;
     transition: all 1s ease;
 }
-#prev,#next{
+.ibody #prev,#next{
     width: 60px;
     height: 60px;
     background: #fff no-repeat center;
@@ -41,17 +41,39 @@
     cursor: pointer;
 
 }
-#prev{
+.ibody #prev{
     background-image: url('../images/prev.png');
     left: 500px;
 }
-#next{
+.ibody #next{
     background-image: url("../images/next.png");
     right: 800px;
 }
-#person{
-    width: 710px;
-    height: 400px;
-    background:url('../images/bg.jpg');
+.ibody #person1,.ibody #person2,.ibody #person3{
     position: relative;
+    width: 710px;
+    height: 150px;
+    position: relative;
+}
+.ibody #person1 .img,.ibody #person2 .img,.ibody #person3 .img{
+    float: left;
+}
+.ibody #person1 .img img,.ibody #person2 .img img,.ibody #person3 .img img{
+    width: 225px;
+    height: 150px;
+    border: 5px solid #fff;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    -moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;
+}
+#persons img:hover{
+    -moz-transform: scale(1.1); -webkit-transform: scale(1.1); -o-transform: scale(1.1); -ms-transform: scale(1.1)
+}
+#persons{
+    width: 710px;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: 650px 420px;
+    background-position: center center;
+    -moz-transition: all 1s; -webkit-transition: all 1s; -o-transition: all 1s; transition: all 1s;
 }
