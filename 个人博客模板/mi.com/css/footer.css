@@ -1,0 +1,100 @@
+.site-footer{
+    width: 100%;
+}
+.site-footer .container{
+    width: 1226px;
+    margin: 0 auto;
+}
+.site-footer .container .footer-service{
+    position: relative;
+    width: 1226px;
+    height: 80px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.site-footer .container .footer-service ul{
+    position: absolute;
+    top: 30px;
+    width: 1226px;
+}
+.site-footer .container .footer-service li{
+    position: relative;
+    text-align: center;
+    height: 25px;
+    width: 244px;
+    float: left;
+    border-left:1px solid #e0e0e0;
+    transition: all .4s;
+    cursor: pointer;
+    color:#616161;
+    line-height:25px;
+}
+.site-footer .container .footer-service .iconfont{
+    font-size: 27px;
+    position: absolute;
+    left: 35px;
+}
+.site-footer .container .footer-service li:hover{
+    color:#FF5500;
+}
+.site-footer .container .footer-service .footer-service-one{
+    border-left:0;
+}
+.site-footer .container .footer-links{
+    position: relative;
+    height: 112px;
+    padding:40px 0;
+    width: 100%;
+}
+.site-footer .container .footer-links dl{
+    width: 160px;
+    float: left;
+}
+.site-footer .container .footer-links dl dt{
+    margin-bottom: 17px;
+    font-size: 14px;
+    color:#424242;
+}
+.site-footer .container .footer-links dl dd{
+    font-size: 12px;
+    color:#757575;
+    margin-top:10px;
+    cursor: pointer;
+}
+.site-footer .container .footer-links dl dd:hover{
+    color: #FF5500;
+}
+.site-footer .container .footer-links .footer-links-number{
+    position: absolute;
+    width: 252px;
+    height: 112px;
+    top: 30px;
+    right: 0;
+}
+.site-footer .container .footer-links .footer-links-number .num{
+    text-align: center;
+    font-size: 25px;
+    color: #FF5500;
+}
+.site-footer .container .footer-links .footer-links-number .date{
+    text-align: center;
+    font-size: 12px;
+    color:#757575;
+    margin-top: 5px;
+}
+.site-footer .container .footer-links .footer-links-number span{
+    position: absolute;
+    right: 65px;
+    bottom: 0;
+    border:1px solid #FF5500;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    line-height:30px;
+    font-size: 12px;
+    color: #FF5500;
+    cursor: pointer;
+}
+.site-footer .container .footer-links .footer-links-number span:hover{
+    background-color: #FF5500;
+    color:#fff;
+}

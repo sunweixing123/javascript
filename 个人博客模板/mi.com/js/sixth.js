@@ -3,9 +3,9 @@
  */
 
 var $wapper=$(".wrapper-1");
-var $prev1=$('.sixth #prev1');
-var $next1=$('.sixth #next1');
-var $ul=$('.sixth #ul1');
+var $prev1=$('.sixth .prev1');
+var $next1=$('.sixth .next1');
+var $ul=$('.sixth .ul1');
 $next1.on('click',function(){
         $ul.stop().animate(
             {
