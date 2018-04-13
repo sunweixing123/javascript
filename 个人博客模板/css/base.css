@@ -15,6 +15,9 @@ a:hover { text-decoration: none; }
 header { position: relative; background:no-repeat;  }
 header h1 {   padding: 15px 0 0 80px; font-size: 22px; font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; }
 header h2 { margin: 20px 80px; color:#000 }
+header .login{  width: 100px;  height: 40px;  position: absolute;  top: 30px;  right: 300px; }
+header .login a{  text-align: center;  line-height: 25px;  display: block;  float: left;  margin-left:10px;  width: 35px;  height: 25px;  border-radius: 50% ;  background-color: #000;  border:2px solid #2828ff;  color: #fff;  cursor: pointer;outline:none;}
+header .login a:hover{  background-color: #FF5500;  }
 /* logo */
 .logo {background-size:132px 132px; background: url(../images/logo.png) no-repeat #000 center; width: 145px; height: 145px; border-radius: 50%; position: absolute; left: -72px; top: 40px; box-shadow: 0px 2px 2px #414141; }
 .logo:hover { background: url(../images/home.png) no-repeat #000 center; }
