@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/sixth.css">
     <link rel="stylesheet" href="css/site-info.css">
     <link rel="stylesheet" href="css/page-main.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 <div class="banner"></div>
@@ -235,11 +236,11 @@
 <div class="wrapper">
     <p>小米明星单品</p>
     <div class="choose">
-        <span id="prev1">&lt;</span>
-        <span id="next1">&gt;</span>
+        <span class="prev1">&lt;</span>
+        <span class="next1">&gt;</span>
     </div>
     <div class="wrapper-1">
-            <ul id="ul1">
+            <ul class="ul1 ull">
                 <li class="selected"><img src="images/轮播图/6ef55907-bbed-49be-a2bb-be0821b5f7b8.png" alt=""><div class="name">小米手环2</div><div class="introduce">oled显示屏，触摸操作</div><div class="price">149元</div></li>
                 <li class="selected"><img src="images/轮播图/T1KvdjBX_v1RXrhCrK.jpg" alt=""><div class="name">小米移动电源2</div><div class="introduce">10000mA，收放自如</div><div class="price">79元</div></li>
                 <li class="selected"><img src="images/轮播图/302f2608-655a-489c-a0c5-a3b9172defd1.png" alt=""><div class="name">小米圈铁耳机pro</div><div class="introduce">双动圈+动铁，高保真石墨烯振膜</div><div class="price">149元</div></li>
@@ -296,14 +297,18 @@
                 </div>
                 <div class="span16">
                     <ul class="brick-list">
-                        <li class="brick-items"><img src="images/page-main/dianshi4.jpg" alt=""><div class="name">小米电视4A 40英寸</div> <div class="introduce">FHD全高清屏/人工智能语音系统</div> <div class="price">1599元</div><div class="popups">不错，再买一个</div></li>
-                        <li class="brick-items"><img src="images/page-main/dianshi4A.jpg" alt=""><div class="name">小米电视4A 50英寸</div> <div class="introduce">人工智能语音系统/蓝牙语音遥控器</div> <div class="price">2399元</div></li>
-                        <li class="brick-items"><img src="images/page-main/bijibenair.jpg" alt=""><div class="name">13.3"小米笔记本Air i5 8G </div> <div class="introduce">全金属超薄机身搭配独显</div> <div class="price">2299元</div></li>
-                        <li class="brick-items"><img src="images/page-main/bijinenpro.jpg" alt=""><div class="name">15.6"小米笔记本pro i7 16G</div> <div class="introduce">性能更强悍的专业笔记本</div> <div class="price">5199元</div></li>
-                        <li class="brick-items"><img src="images/page-main/xmad_14972549116226_tZpod.png" alt=""><div class="name">米家空气净化器</div> <div class="introduce">OLED显示屏幕/激光颗粒物传感器</div> <div class="price">6999元</div></li>
-                        <li class="brick-items"><img src="images/page-main/pms_1504498936.11861982!220x220.jpg" alt=""><div class="name">米价电水壶</div> <div class="introduce">一杯水 是一家人的安心</div> <div class="price">1199元</div></li>
-                        <li class="brick-items"><img src="images/page-main/pms_1510020567.64467830!220x220.jpg" alt=""><div class="name">小米 米家空气净化器 2S</div> <div class="introduce">OLED显示屏幕/激光颗粒物传感器</div> <div class="price">99元</div></li>
-                        <li class="brick-items"><img src="images/page-main/hongminote5A.jpg" alt=""><div class="name">小白摄像机</div> <div class="introduce">5.5英寸大屏，超轻薄机身</div> <div class="price">699元</div></li>
+                        <li class="brick-items"><img src="images/page-main/dianshi4.jpg" alt=""><div class="name">小米电视4A 40英寸</div> <div class="introduce">FHD全高清屏/人工智能语音系统</div> <div class="price">1599元</div><div class="popups"><span>不错，再买一个,不错，再买一个,不错，再买一个,不错，再买一个,不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/dianshi4A.jpg" alt=""><div class="name">小米电视4A 50英寸</div> <div class="introduce">人工智能语音系统/蓝牙语音遥控器</div> <div class="price">2399元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/bijibenair.jpg" alt=""><div class="name">13.3"小米笔记本Air i5 8G </div> <div class="introduce">全金属超薄机身搭配独显</div> <div class="price">2299元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/bijinenpro.jpg" alt=""><div class="name">15.6"小米笔记本pro i7 16G</div> <div class="introduce">性能更强悍的专业笔记本</div> <div class="price">5199元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/xmad_14972549116226_tZpod.png" alt=""><div class="name">米家空气净化器</div> <div class="introduce">OLED显示屏幕/激光颗粒物传感器</div> <div class="price">6999元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1504498936.11861982!220x220.jpg" alt=""><div class="name">米价电水壶</div> <div class="introduce">一杯水 是一家人的安心</div> <div class="price">1199元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1510020567.64467830!220x220.jpg" alt=""><div class="name">小米 米家空气净化器 2S</div> <div class="introduce">OLED显示屏幕/激光颗粒物传感器</div> <div class="price">99元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-cao">
+                            <div class="small" id="small_3"><span><p class="small-goods">小白摄像机</p><p class="small-price">399元</p></span><img src="images/page-main/pms_1468806372.46368911!220x220.jpg" alt=""></div>
+                            <div class="small" id="small_4"><span><p class="small-goods">浏览更多</p><p class="small-price">热门</p></span><img
+                                    src="images/page-main/jiantou.jpg" alt=""></div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -323,30 +328,125 @@
                 </div>
                 <div class="span16">
                     <ul class="brick-list">
-                        <li class="brick-items"><img src="images/page-main/pms_1499048837.78256911!220x220.jpg" alt=""><div class="name">米兔积木机器人 履带机甲</div> <div class="introduce">履带底盘，智能操控，百变拼插</div> <div class="price">449元</div></li>
-                        <li class="brick-items"><img src="images/page-main/pms_1464615180.86261317!220x220.jpg" alt=""><div class="name">米兔智能故事机</div> <div class="introduce">微信远程互动，智能语音交互</div> <div class="price">189元</div></li>
-                        <li class="brick-items"><img src="images/page-main/31ae6df6-b672-491e-ab95-7b83a965c694.png" alt=""><div class="name">米家骑计电助力折叠自行车 </div> <div class="introduce">力矩传感电助力，便携折叠设计</div> <div class="price">2999元</div></li>
-                        <li class="brick-items"><img src="images/page-main/pms_1480474019.52478532!220x220.jpg" alt=""><div class="name">米家多功能网关</div> <div class="introduce">米家智能控制中心</div> <div class="price">129元</div></li>
-                        <li class="brick-items"><img src="images/page-main/pms_1520564952.59464287!220x220.jpg" alt=""><div class="name">米兔积木矿山卡车</div> <div class="introduce">方向盘控制系统，翻斗升降系统</div> <div class="price">99元</div></li>
-                        <li class="brick-items"><img src="images/page-main/pms_1498526059.78899603!220x220.jpg" alt=""><div class="name">米兔儿童电话手表2</div> <div class="introduce">AMOLED高清炫彩屏，6天超长待机</div> <div class="price">349元</div></li>
-                        <li class="brick-items"><img src="images/page-main/pms_1515662525.51823819!220x220.jpg" alt=""><div class="name">米兔智能机木</div> <div class="introduce">动手又动脑，启发孩子创造力</div> <div class="price">189元</div></li>
-                        <li class="brick-items"><img src="images/page-main/hongminote5A.jpg" alt=""><div class="name">红米Note5A 2GB+16GB</div> <div class="introduce">5.5英寸大屏，超轻薄机身</div> <div class="price">699元</div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1499048837.78256911!220x220.jpg" alt=""><div class="name">米兔积木机器人 履带机甲</div> <div class="introduce">履带底盘，智能操控，百变拼插</div> <div class="price">449元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1464615180.86261317!220x220.jpg" alt=""><div class="name">米兔智能故事机</div> <div class="introduce">微信远程互动，智能语音交互</div> <div class="price">189元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/31ae6df6-b672-491e-ab95-7b83a965c694.png" alt=""><div class="name">米家骑计电助力折叠自行车 </div> <div class="introduce">力矩传感电助力，便携折叠设计</div> <div class="price">2999元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1480474019.52478532!220x220.jpg" alt=""><div class="name">米家多功能网关</div> <div class="introduce">米家智能控制中心</div> <div class="price">129元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1520564952.59464287!220x220.jpg" alt=""><div class="name">米兔积木矿山卡车</div> <div class="introduce">方向盘控制系统，翻斗升降系统</div> <div class="price">99元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1498526059.78899603!220x220.jpg" alt=""><div class="name">米兔儿童电话手表2</div> <div class="introduce">AMOLED高清炫彩屏，6天超长待机</div> <div class="price">349元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-items"><img src="images/page-main/pms_1515662525.51823819!220x220.jpg" alt=""><div class="name">米兔智能机木</div> <div class="introduce">动手又动脑，启发孩子创造力</div> <div class="price">189元</div><div class="popups"><span>不错，再买一个</span></div></li>
+                        <li class="brick-cao">
+                            <div class="small" id="small_1"><span><p class="small-goods">小米VR眼镜</p><p class="small-price">269元</p></span><img src="images/page-main/pms_1477985364.89714934!220x220.jpg" alt=""></div>
+                            <div class="small" id="small_2"><span><p class="small-goods">浏览更多</p><p class="small-price">热门</p></span><img
+                                    src="images/page-main/jiantou.jpg" alt=""></div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
+        <div class="sixth">
+            <div class="wrapper">
+                <p>为你推荐</p>
+                <div class="choose">
+                    <span class="prev1">&lt;</span>
+                    <span class="next1">&gt;</span>
+                </div>
+                <div class="wrapper-1">
+                    <ul class="ul1">
+                        <li class="selected"><img src="images/轮播图/xiaomiai.jpg" alt=""><div class="name">小米手环2</div><div class="introduce">oled显示屏，触摸操作</div><div class="price">149元</div></li>
+                        <li class="selected"><img src="images/轮播图/T1KvdjBX_v1RXrhCrK.jpg" alt=""><div class="name">小米移动电源2</div><div class="introduce">10000mA，收放自如</div><div class="price">79元</div></li>
+                        <li class="selected"><img src="images/轮播图/302f2608-655a-489c-a0c5-a3b9172defd1.png" alt=""><div class="name">小米圈铁耳机pro</div><div class="introduce">双动圈+动铁，高保真石墨烯振膜</div><div class="price">149元</div></li>
+                        <li class="selected"><img src="images/轮播图/848def18-47d9-4ca0-8822-c2ac61b83779.png" alt=""><div class="name">米价扫地机器人</div><div class="introduce">智能路径规划，大风压澎湃吸力</div><div class="price">1699元</div></li>
+                        <li class="selected"><img src="images/轮播图/de35852a-1be5-4ef5-846f-dcdd2efcfea6.png" alt=""><div class="name">小米路由器3</div><div class="introduce">全向高增益4天线</div><div class="price">149元</div></li>
+                        <li class="selected"><img src="images/轮播图/xmad_15117763019255_STRfj.png" alt=""><div class="name">小米mix2</div><div class="introduce">"5.99"全面屏，骁龙835处理器</div><div class="price">3599元</div></li>
+                        <li class="selected"><img src="images/轮播图/xiaomiai.jpg" alt=""><div class="name">小米小爱音箱mini</div><div class="introduce">3000人好评</div><div class="price">99元</div></li>
+                        <li class="selected"><img src="images/轮播图/xmad_15117899982255_yNLAY.png" alt=""><div class="name">小米note3</div><div class="introduce">玻璃机身，拍人更美</div><div class="price">2299元起</div></li>
+                        <li class="selected"><img src="images/轮播图/pms_1503909150.67293503!220x220.png" alt=""><div class="name">小米电视4</div><div class="introduce">无边框设计，4k屏幕</div><div class="price">3999元起</div></li>
+                        <li class="fifth"><img src="images/轮播图/725a37e3-78b7-4298-8098-c40097bf179d.png" alt=""><div class="name">小米笔记本Air</div><div class="introduce">轻薄长续航，金属机身</div><div class="price">3999元</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<div class="site-footer">
+    <div class="container">
+        <div class="footer-service">
+            <ul>
+                <li class="footer-service-one"><i class="iconfont icon-gifts"></i><span><span>预约维修服务</span></li>
+                <li><i class="iconfont icon-gifts"></i><span><span>7天无理由退货</span></li>
+                <li><i class="iconfont icon-gifts"></i><span><span>15天免费退货</span></li>
+                <li><i class="iconfont icon-gifts"></i><span>满150元包邮</span></li>
+                <li><i class="iconfont icon-gifts"></i><span><span>520余家网点</span></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <dl><dt>帮助中心</dt>
+                <dd>账户管理</dd>
+                <dd>购物指南</dd>
+                <dd>订单操作</dd>
+            </dl>
+            <dl><dt>服务支持</dt>
+                <dd>售后政策</dd>
+                <dd>自助服务</dd>
+                <dd>相关下载</dd></dl>
+            <dl><dt>线下门店</dt>
+                <dd>小米之家</dd>
+                <dd>服务网点</dd>
+                <dd>零售网点</dd></dl>
+            <dl><dt>关于小米</dt>
+                <dd>了解小米</dd>
+                <dd>加入小米</dd>
+                <dd>联系我们</dd></dl>
+            <dl><dt>关注我们</dt>
+                <dd>新浪微博</dd>
+                <dd>小米部落</dd>
+                <dd>官方微信</dd></dl>
+            <dl><dt>特色服务</dt>
+                <dd>F码通道</dd>
+                <dd>礼物码</dd>
+                <dd>防伪查询</dd></dl>
+            <div class="footer-links-number">
+                <p class="num">400-100-5678</p>
+                <p class="date">周一至周日 8:00-18:00</p>
+                <p class="date">（仅收市话费）</p>
+                <span>在线客服</span>
+            </div>
+        </div>
 
+    </div>
+</div>
 <!--最后-->
 <div class="site-info">
 
     <div class="container">
-        <p>©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号
-            违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+        <div class="milogo"></div>
+        <div class="info-text">
+            <ul class="sites">
+                <li>小米商城|</li>
+                <li>MIUI|</li>
+                <li>米家|</li>
+                <li>米聊|</li>
+                <li>多看|</li>
+                <li>游戏|</li>
+                <li>路由器|</li>
+                <li>米粉卡|</li>
+                <li>小米天猫店|</li>
+                <li>隐私政策|</li>
+                <li>问题反馈|</li>
+                <li>Select Region</li>
+            </ul>
+            <p class="net">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号 </p>
+            <p>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+        </div>
+        <div class="info-links">
+            <img src="images/truste.png" alt="">
+            <img src="images/v-logo-2.png" alt="">
+            <img src="images/v-logo-1.png" alt="">
+            <img src="images/v-logo-3.png" alt="">
+            <img src="images/ba10428a4f9495ac310fd0b5e0cf8370.png" alt="">
+        </div>
     </div>
 </div>
     <script src="js/jquery-3.2.1.js"></script>

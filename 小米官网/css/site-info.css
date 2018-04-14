@@ -1,14 +1,64 @@
 .site-info{
-    position: relative;
-    height: 40px;
-    width: 1226px;
-    margin: 400px auto;
-
+    margin-bottom: 30px;
 }
-
-.site-info p{
-    margin-left:650px;
-    display: block;
-    width: 570px;
-    font-size: 8px;
+.site-info .container{
+    width: 1226px;
+    margin: 0 auto;
+    height: 57px;
+    position: relative;
+    background-color: #fafafa;
+}
+.site-info .container .milogo{
+    width: 55px;
+    height: 55px;
+    background-color: #FF5500;
+    position: absolute;
+    left: 0;
+}
+.site-info .container .milogo:after{
+    content: "";
+    background: url("../images/mi-logo.png") no-repeat center;
+    height: 55px;
+    width: 55px;
+    display:block;
+}
+.site-info .container .info-text{
+    width: 605px;
+    height: 57px;
+    position: absolute;
+    left: 80px;
+}
+.site-info .container .info-text .sites{
+    width: 605px;
+    height: 18px;
+}
+.site-info .container .info-text .sites li{
+    margin-left: 2px;
+    float: left;
+    font-size: 12px;
+    color: #757575;
+}
+.site-info .container .info-text p{
+    font-size: 12px;
+    color: #b0b0b0;
+    margin-top: 5px;
+}
+.site-info .container .info-text .net{
+    cursor: pointer;
+}
+.site-info .container .info-text .net:hover{
+    color:#FF5500;
+}
+.site-info .container .info-links{
+    position: absolute;
+    right: 0;
+    width: 435px;
+    height: 28px;
+    top: 14px;
+}
+.site-info .container .info-links img{
+    width: 20%;
+    height: 100%;
+    float: left;
+    cursor: pointer;
 }
