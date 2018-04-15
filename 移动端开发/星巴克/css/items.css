@@ -1,0 +1,27 @@
+.mobile .compoter{
+    width: 100%;
+}
+.mobile{
+    display:none;
+}
+.items{
+    width: 100%;
+}
+.items img{
+    width: 100%;
+    margin-bottom:100px;
+    cursor: pointer;
+}
+@media(max-width: 1800px){
+    .mobile{
+        display:none;
+    }
+}
+@media(max-width: 963px){
+    .computer{
+        display:none;
+    }
+    .mobile{
+        display:block;
+    }
+}
