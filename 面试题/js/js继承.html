@@ -19,6 +19,21 @@
     console.log(classB.prototype.constructor);
     classB.prototype.constructor=classB();
     classB.prototype.saycolor();
+    function aa(name,age){
+        console.log(this);
+    }
+    var obj={
+        name:'lisi',
+        age:14
+    }
+    // aa();
+    // aa.call('name','lisi',23);
+
+    function bb(name,age){
+        aa.call(obj);
+        // aa();
+    }
+    bb();
 
 </script>
 </body>
