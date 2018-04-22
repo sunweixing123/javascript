@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ音乐</title>
+
+
+</head>
+<body>
+<script src="jquery-3.2.1.js"></script>
+<script>
+    $.post('https://api.hibai.cn/api/index/index',
+        {
+            "TransCode": "020112",
+            "OpenId": "123456789",
+            "Body": {
+                "SongListId": "141998290"
+            }
+        },
+    function(res){
+        console.log(res);
+        for(var i=0;i<res.Body.length;i++){
+//           document.body.innerHTML="<div>res.Body[i].author</div>"
+            console.log(res.Body[i].author)
+        }
+    },'json'
+    )
+
+
+
+</script>
+</body>
+</html>
