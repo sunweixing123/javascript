@@ -1,0 +1,14 @@
+.site-info{
+    position: relative;
+    height: 40px;
+    width: 1226px;
+    margin: 400px auto;
+
+}
+
+.site-info p{
+    margin-left:650px;
+    display: block;
+    width: 570px;
+    font-size: 8px;
+}

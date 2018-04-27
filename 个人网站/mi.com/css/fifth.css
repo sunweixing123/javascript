@@ -1,0 +1,89 @@
+/*fifth开始*/
+.fifth{
+    position: relative;
+    background: #ffffff;
+    height: 170px;
+    margin-top: 25px;
+}
+.fifth .fifth-1{
+    position: relative;
+    width: 1226px;
+    height: 170px;
+    background:#fff;
+    margin:0 auto;
+}
+/*字体图标*/
+
+.fifth .iconfont{
+    display: block;
+    color:#fff;
+    font-size: 27px;
+    margin-top:20px;
+    margin-left: 20px;
+}
+.fifth .fifth-1-1{
+    height: 100%;
+    width: 220px;
+    background: #5f5750;
+    float: left;
+}
+.fifth .fifth-1-1 li{
+    width: 72px;
+    height: 82px;
+    float: left;
+    position: relative;
+}
+.fifth .fifth-1-1 .one{
+    /*border-right:1px #cccccc solid;*/
+    /*border-bottom:1px #ccc solid;*/
+}
+.fifth .fifth-1-1-1 a{
+    display:block;
+    font-size: 8px;
+    color:rgba(255,255,255,0.7);
+    margin:5px 12px;
+}
+.fifth img{
+    width: 316px;
+    height: 100%;
+}
+.fifth .fifth-1-1-2,
+.fifth .fifth-1-1-3 {
+    width: 316px;
+    height: 100%;
+    float: left;
+    margin-left: 19px;
+}
+.fifth .fifth-1-1-4{
+    width: 316px;
+    height: 100%;
+    float: right;
+}
+/*.fifth .fifth-1-2{*/
+    /*display: block;*/
+    /*width: 316px;*/
+    /*height: 100%;*/
+    /*background-image: url("../images/小米网站图片/xmad_15082970588295_zXSbw.jpg");*/
+    /*float: left;*/
+    /*margin-left: 19px;*/
+    /*background-size:100% 100%;*/
+/*}*/
+/*.fifth .fifth-1-3{*/
+    /*display: block;*/
+    /*width: 316px;*/
+    /*height: 100%;*/
+    /*background-image: url("../images/小米网站图片/xmad_15067798057483_gquZc.jpg");*/
+    /*float: left;*/
+    /*margin-left: 19px;*/
+    /*background-size:100% 100%;*/
+/*}*/
+/*.fifth .fifth-1-4{*/
+    /*display: block;*/
+    /*width: 316px;*/
+    /*height: 100%;*/
+    /*background-image: url("../images/小米网站图片/xmad_14998442103443_TgVEY.jpg");*/
+    /*float: right;*/
+    /*margin-left: 19px;*/
+    /*background-size:100% 100%;*/
+/*}*/
+/*fifth结束*/
