@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body ,html{
+            width: 100%;
+        }
+        /*.one{*/
+        /*display: -moz-box;*/
+        /*display: -webkit-box;*/
+        /*width: 100%;*/
+        /*height: 400px;*/
+        /*}*/
+        /*.two{*/
+        /*-webkit-box-flex: 1;*/
+        /*height: 100%;*/
+        /*background-color: #ff0000;*/
+        /*}*/
+        /*.three{*/
+        /*-webkit-box-flex: 2;*/
+        /*height:100%;*/
+        /*background-color: #00ff00;*/
+        /*}*/
+        .container{
+            display:-webkit-box;
+            width: 100%;
+            height: 500px;
+        }
+        .a{
+            background-color: #00ff00;
+            height: 100%;
+            -webkit-box-flex: 2;
+        }
+        .b{
+            height: 100%;
+            background-color: #ff0000;
+            -webkit-box-flex: 3;
+        }
+        .c{
+            height: 100%;
+            background-color: #f0f000;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="one">
+    <div class="two"></div>
+    <div class="three"></div>
+</div>
+<div class="container">
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+</div>
+</body>
+</html>
