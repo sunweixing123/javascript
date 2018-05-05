@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(num,index) in array"> {{num}}=>{{index}}</li>
+    </ul>
+    <ul>
+        <li v-for="(value,key,index) in obj">{{value}}=={{key}}=={{index}}</li>
+    </ul>
+    <ul>
+        <li v-for="obj in arrSort">
+            <div v-for="(value,key) in obj">{{value}}=={{key}}</div>
+        </li>
+    </ul>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            array:[1,2,3,4,5,6,7,8,9],
+            obj:{
+                name:'zhangsan',
+                age:18,
+                school:'nongda'
+            },
+            arr:[
+                {
+                    name:'zhangsan',
+                    age:29,
+                    school:'qinghua'
+                },
+                {
+                    name:'lisi',
+                    age:23,
+                    school:'nongda'
+                },
+                {
+                    name:'wangwu',
+                    age:25,
+                    school:'heida'
+                }
+            ]
+        },
+        computed:{
+            arrSort(){
+                return this.arr.sort(function(a,b){
+                    return a.age-b.age;
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>
