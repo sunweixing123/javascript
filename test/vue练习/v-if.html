@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app,#app2{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+        }
+        #app2{
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-if="num">
+app
+</div>
+<div id="app2" v-show="num">
+app2
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            num:''
+        }
+    });
+    new Vue({
+        el:'#app2',
+        data:{
+            num:1
+        }
+    })
+</script>
+</html>
