@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        .container{
+            width: 1500px;
+            margin: 0 auto;
+        }
+        header,footer,nav{
+            width: 100%;
+            height: 100px;
+            background-color: #CCCCCC;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+        }
+        article{
+            width: 100%;
+            height: 200px;
+            margin: 40px 0;
+
+
+        }
+        article p{
+            text-align: center;
+        }
+        #right{
+            width: 45%;
+            float: right;
+            background-color: #00ff00;
+            height: 100%;
+
+        }
+        #left{
+            width: 45%;
+            float: left;
+            background-color: #f0f000;
+            height: 100%;
+        }
+        @media (max-width:1499px) {
+            .container{
+                width:100%;
+            }
+        }
+        @media(max-width:799px){
+            .container{
+                height: 400px;
+            }
+            #left{
+                width: 100%;
+                height: 200px;
+            }
+            #right{
+                width: 100%;
+                height: 200px;
+            }
+            footer{
+                margin-top:230px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><p>页头</p></header>
+        <nav><p>导航</p></nav>
+        <article class="clearfix">
+            <section id="right">
+                <p>                美国时间5月8号，保罗带队挺进西决…txtx 祝福炮，期待可能的火勇大战！～保罗：没有什么能够阻挡，我对西决的向往～圣保罗：西决的地板我要亲手来摸！保罗终于进西决了！！！！圣保罗生涯季后赛得分新高！！！！火箭加油！！RUN AS ONE！！！！
+                </p>
+            </section>
+            <section id="left">
+                <p>今天是我加入虎扑的第3000天，火箭杀入西决，多说几句
+                    对于像我这样经历过姚明时代的人，火箭情节永远都在，其他队打的好会赞叹，但真的做不了主队了，所以也庆幸送别了姚麦，迎来了哈登，现在还有保罗，但是也不会忘了多年不摆烂就是干的乐透冠军，
+                    今年这状态我觉得是争冠的最好机会了，明年怎样在狂野的西部谁也说不准，加油火箭，Run As One！</p>
+            </section>
+        </article>
+        <footer><p>页尾</p></footer>
+    </div>
+</body>
+</html>
