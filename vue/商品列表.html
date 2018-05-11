@@ -1,7 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>商品</title>
     <style>
         *{
@@ -20,7 +24,7 @@
             line-height: 70px;
             text-align: center;
         }
-        #app li{
+        #app li div{
             font-size:20px;
             position: relative;
             margin-top: 10px;
@@ -31,7 +35,7 @@
             text-align: center;
             cursor: pointer;
         }
-        #app li span{
+        #app li div span{
             position: absolute;
             left: 15px;
         }
@@ -47,9 +51,14 @@
 <div id="app">
     <h1>TODOLIST</h1>
     <div class="head"><button>删除</button> <button>添加</button></div>
-    <ul id="list">
-        <li v-for="(val,key) in obj" @click="add()"> <input type="radio" value="" @click.stop><span @click.stop="clear()">[x]</span>{{key}}     {{val}}</li>
-    </ul>
+
+        <ul id="list">
+            <li v-for="(obj,index) in arr">
+                <div>
+
+                </div>
+            </li>
+        </ul>
     <h1>{{num}}</h1>
     <script src="jquery-3.2.1.js"></script>
     <script src="vue.js"></script>
@@ -57,15 +66,38 @@
         let vm = new Vue({
             el : "#app",
             data : {
-                obj: {
-                   clothes:50,
-                    heat:60,
-                    jeans:70,
-                    computer:80,
-                    iphone:6000,
-                    tv:4000
-                },
-                num:0
+                arr:[{
+                    name :'衣服',
+                    sprice:50,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'裤子',
+                    sprice:60,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'帽子',
+                    sprice:70,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'电脑',
+                    sprice:5000,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'iphone',
+                    sprice:6000,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'电视',
+                    sprice:4000,
+                    pd:0,
+                    ischoose:false,
+                }],
+                num:0,
             },
             methods:{
                 add(){
