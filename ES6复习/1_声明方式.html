@@ -2,9 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<ul id="one">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+//    var a=5;
+//    console.log(a);
+//function b(){
+//    console.log(a);
+//    a=6;
+//    var a=5;
+//
+//    }
+//    b();
+
+//    var a=5;
+//    function foo(){
+//        console.log(a);
+////        var a=6;
+//    }
+//    foo();
+//console.log(a);
+//    var a=5;
+//    function a(){
+//        console.log(a);
+//    }
+//    a=6;
+//    console.log(a);
+//    a();
+//    a();
+//    b();
+//    var a=function(){
+//        console.log("a");
+//    }
+//
+//    function b(){
+//        console.log("b");
+//    }
+
+////    暂时性死区:let定义的变量 在其之前不能调用
+//let a=5;
+//function foo() {
+//    console.log(a);
+//    let a=6;
+//}
+//foo();
+//抛出异常
+//throw new Error('lalala')
+
+
+//    闭包：函数里有一个内部函数 内部函数调用外部函数的变量  变量不会被释放
+//给每一个li绑定索引
+//    var oli=document.getElementById('one');
+    var ali=document.querySelectorAll('#one li');
+//    for(var i=0;i<ali.length;i++){
+//        ali[i].index=i;
+//        ali[i].onclick=function(){
+//            console.log(this.index);
+//        }
+//    }
+//    闭包
+//    for(var i=0;i<ali.length;i++){
+//        (
+//            function (index) {
+//                ali[index].onclick=function(){
+//                    console.log(index);
+//                }
+//            }
+//        )(i);
+//
+//    }
+//    let arr=[];
+//    for(let i=0;i<5;i++){
+//        arr[i]=function(){
+//            console.log(i);
+//        }
+//    }
+//    arr[3]();//结果是3 如果let改为var则结果永远是五
+//
+//const 定义变量不能被改变  变量指向的内存地址不能改变
+//const a=5;
+// a=6;
+//const obj={
+//    name:'zhangsan',
+//    age:50
+//}
+//obj.name='lisi';
+////console.log(obj);
+//    obj={}//{}相当于新建一个obj 新的地址
+//    Object.freeze(obj)//冻结   无法改变值
+
+    const arr=[1,2,3,4];
+    arr.push(5);
+    console.log(arr)
+
+
+
+</script>
+
+
+
+
+<!--闭包-->
+
+
+
+
+
 </body>
 </html>
