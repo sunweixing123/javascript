@@ -1,10 +1,196 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        /*css reset*/
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .selected {
+            background: #ff0000;
+        }
+
+        #container {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .header {
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-bottom: 2px solid #0f0f0f;
+        }
+
+        .list li div {
+            background: #cccccc;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 500px;
+            height: 50px;
+        }
+
+        #container .selected {
+            background: #ff0000;
+        }
+
+        .left,
+        .X {
+            float: left;
+            margin-left: 10px;
+            line-height: 50px;
+        }
+
+        .right {
+            float: right;
+            margin-right: 10px;
+            line-height: 50px;
+        }
+
+        .X {
+            cursor: pointer;
+        }
+
+        .cb {
+            float: left;
+            margin-left: 10px;
+            height: 50px;
+        }
+    </style>
+
+
+
 </head>
+
 <body>
-$END$
+<div id="container">
+    <h1 class="header">TODOLIST</h1>
+    <input type="text" v-model="search"> <button @click="sch">搜索</button> <br> 名称：
+    <input type="text"> 价格：
+    <input type="text">
+    <ul class="list">
+        <li v-for="(obj,index) in arr" @click="add(obj) " v-show="obj.show">
+            <input type="checkbox" v-model="chk" :value="index" @click.stop class="cb">
+            <div :class="{selected:obj.isSel}">
+                <span class="X" @click.stop="del(obj)">[X]</span>
+                <span class="left">{{obj.key}} </span>
+                <span class="right">{{obj.val}} </span>
+            </div>
+
+        </li>
+    </ul>
+    <div class="sum">
+        总计：{{ad}}
+        <button @click="delall()">滚</button>
+    </div>
+
+</div>
+<script src="./jquery-3.2.1.js"></script>
+<script src="./vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#container',
+        data: {
+            arr: [{
+                key: '衣服',
+                val: 150,
+                flag: 0,
+                isSel: false,
+                show: true
+
+            }, {
+                key: '裤子',
+                val: 230,
+                flag: 0,
+                isSel: false,
+                show: true
+            }, {
+                key: '帽子',
+                val: 78,
+                flag: 0,
+                isSel: false,
+                show: true
+            }, {
+                key: 'AirJordan',
+                val: 1340,
+                flag: 0,
+                isSel: false,
+                show: true
+            }, {
+                key: '围巾',
+                val: 120,
+                flag: 0,
+                isSel: false,
+                show: true
+            }],
+            sum: 0,
+            classSel: 'selected',
+            search: '',
+            chk: [],
+        },
+        methods: {
+            add(obj) {
+                if (obj.flag == 0) {
+                    obj.flag++;
+                    obj.isSel = true;
+                } else {
+                    obj.flag--;
+                    obj.isSel = false;
+
+                }
+            },
+            del(obj) {
+
+            },
+            delall() {
+
+                for (let i = 0; i < this.chk.length; i++) {
+                    this.arr.splice(this.chk[i] - i, 1);
+                }
+                this.chk = [];
+
+            }
+        },
+        computed: {
+            ad() {
+                let he = 0;
+                console.log(12);
+                for (obj of this.arr) {
+                    if (obj.flag == 1) {
+                        he += obj.val;
+                    }
+                }
+                return he
+            }
+        }
+    })
+</script>
 </body>
+
 </html>
