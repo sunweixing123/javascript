@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="app">
+<sunweixing msg="自定义" @click.native="add()"></sunweixing>
+    <weixing :content="title" @click.native="add()"></weixing>
+    <h1>{{num}}</h1>
+</div>
+<script src="vue.js"></script>
+<script>
+    Vue.component('sunweixing',{
+       template:`
+<div>
+<h1>{{msg}}</h1>
+<h1>只是组件1</h1>
+<h1>这是组件1</h1>
+</div>
+`,
+        props:['msg']
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            title:'这是一个局部组件a',
+            num:1
+        },
+        methods:{
+            add(){
+                this.num++
+            }
+        },
+        components:{
+           weixing:{
+               template:`
+                    <div>
+
+                    <h1>{{content}}</h1>
+                    <h1>lalalal</h1>
+</div>
+`,
+               props:['content']
+           }
+        }
+
+    })
+</script>
 </body>
 </html>

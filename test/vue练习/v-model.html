@@ -2,9 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        textarea{
+            resize:none;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="app">
+    <form action="">
+        name：<input type="text" v-model="username">
+        姓名<h>{{username}}</h>
+        <br>
+        shool：<input type="text" v-model="school">
+        学校 <h>{{school}}</h>
+        <br>
+        年龄是： <input type="text" v-model.number="age">
+        <h>{{age}}</h>
+        <br>
+        <select name="" id="sel" v-model="hobby">
+            <option value="足球">足球</option>
+            <option value="篮球">篮球</option>
+            <option value="排球">排球</option>
+            <option value="橄榄球">橄榄球</option>
+        </select>
+        喜欢的运动是 <h>{{hobby}}</h>
+        <br>
+        球员：
+        <input type="checkbox" value="科比" v-model="star">科比
+        <input type="checkbox" value="艾弗森" v-model="star">艾弗森
+        <input type="checkbox" value="麦迪" v-model="star">麦迪
+        <input type="checkbox" value="卡特" v-model="star">卡特
+        <h>{{star}}</h>
+        <br>
+        <textarea name="" id="" cols="30" rows="10">
+
+        </textarea>
+    </form>
+
+
+</div>
 </body>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            username:'',
+            school:'',
+            age:'',
+            hobby:'',
+            star:[]
+
+        },
+
+    })
+
+
+</script>
 </html>
