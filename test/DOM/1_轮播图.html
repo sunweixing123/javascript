@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            margin:100px auto;
+            position: relative;
+            /* overflow:hidden; */
+
+        }
+        .container .container-div{
+            height: 500px;
+            width: 1500px;
+            border:1px solid;
+            position: absolut;
+            left:0;
+        }
+        .container .container-div div{
+            width: 300px;
+            height: 300px;
+            background-color: #f00;
+            margin: 20px 20px;
+            float: left;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-div">
+                <div class="div1">1</div>
+                <div class="div2">2</div>
+                <div class="div3">3</div>
+                <div class="div4">4</div>
+        </div>
+        
+    </div>
+    <button id='btn'>点击</button>
+
+
+    <script>
+        var Odiv=document.querySelector('.container-div div');
+        var OcontainerDiv=document.querySelector('.container-div');
+        var Obtn=document.querySelector('#btn');
+
+        Obtn.onclick=function(){
+            OcontainerDiv.style.left = 300+'px';
+        }
+
+
+    
+    
+    </script>
+</body>
+</html>
