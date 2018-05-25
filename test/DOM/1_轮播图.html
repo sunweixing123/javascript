@@ -25,8 +25,8 @@
             height: 500px;
             width: 1500px;
             border:1px solid;
-            position: absolut;
-            left:0;
+            position: absolute;
+            left:0px;
         }
         .container .container-div div{
             width: 300px;
@@ -49,15 +49,27 @@
         
     </div>
     <button id='btn'>点击</button>
+    <button id="stop">停止</button>
 
 
     <script>
         var Odiv=document.querySelector('.container-div div');
         var OcontainerDiv=document.querySelector('.container-div');
         var Obtn=document.querySelector('#btn');
+        var Ostop=document.querySelector('#stop');
 
-        Obtn.onclick=function(){
-            OcontainerDiv.style.left = 300+'px';
+        Obtn.onclick=function(e){
+            console.log(133);
+            // OcontainerDiv.style.left =  300 +'px';
+             timer=setInterval(function(){
+                OcontainerDiv.style.left = (OcontainerDiv.offsetLeft - 10) +'px';
+            },20)
+            if(OcontainerDiv.offsetLeft < -1500){
+                clearInterval(timer);
+            }
+        }
+        Ostop.onclick=function(){
+            clearInterval(timer);
         }
 
 
