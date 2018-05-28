@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: #ccc;
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+            perspective: 1000px;
+            perspective-origin: 0 -500px;
+        }
+
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(224, 38, 38);
+            /* transform:rotate(30deg); */
+            
+            animation:play 2s linear infinite;
+        }
+        @keyframes play{
+            from{
+                width: 200px;
+                background-color: rgb(224, 38, 38);
+            }
+            to{
+                transform: rotateY(360deg);
+                width: 400px;
+                background-color: #ff0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="div1">div1</div>
+        <div class="div2">div2</div>
+        <div class="div3">div3</div>
+
+
+
+    </div>
+</body>
+
+</html>
