@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         let item = [1, 2, 3, 4];
+        //         // console.log(item);
+        //         // console.log(...item);
+        // //数组作为函数参数
+        //         function foo(aa,bb,cc) {
+        //             console.log(aa,bb,cc);
+        //         }
+        //         foo(...item);
+
+
+        // function f(x, y, z) {
+        //     // ...
+        // }
+        // var args = [0, 1, 2];
+        // f.apply(null, args);
+
+        // ES6的写法
+        // function f(x, y, z) {
+        //    console.log(x,y,z);
+        // }
+        // let args = [0, 1, 2];
+        // f(...args);
+
+
+        //复制数组
+        // const arrs = [1,2,3,4,5];
+        // const aa=arrs;
+        // // aa[0]=5;//会修改数组
+        // const bb=arrs.concat();
+        // // bb[0]=6;//不会修改数组
+        // const cc = [...arrs];
+        // cc[0]=7;//不会修改数组
+        // console.log('aa:'+aa,'bb:'+bb,'cc:'+cc);
+        // console.log(arrs);
+
+
+        //合并数组
+        // const arr = [1,2,3];
+        // const arr1 = [4,5,6];
+        // const arr2 = [7,8,9];
+        // const item = [...arr,...arr1,...arr2];
+        // console.log(item);
+
+
+        //对象转化数组
+        // let obj = {
+        //     'name': 'zs',
+        //     'age': 17,
+        //     'school': 'nongda',
+        //     length: 3
+        // }
+        // let obj1 = {
+        //     '0': 'aa',
+        //     '1': 'bb',
+        //     '2': 'cc',
+        //     length: 3
+        // }
+
+        // // ES5的写法
+        // var arr1 = [].slice.call(obj1); // ['a', 'b', 'c']
+        // //ES6
+        // const item = Array.from(obj1);
+        // console.log(item);
+
+
+
+        // NodeList对象
+        // let ps = document.querySelectorAll('p');
+        // Array.from(ps).filter(p => {
+        //     return p.textContent.length > 100;
+        // });
+
+        // // arguments对象
+        // function foo() {
+        //     var args = Array.from(arguments);
+        //     // ...
+        // }
+
+
+        // console.log(Array.of(1,2,3));
+
+        //copyWithin函数
+        // const item=[1,2,3,4,5];
+        // item.copyWithin(2,0,4);
+        // console.log(item);
+        //target（必需）：从该位置开始替换数据。如果为负值，表示倒数。
+        //start（可选）：从该位置开始读取数据，默认为 0。如果为负值，表示倒数。
+        //end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。
+
+        //遍历数组
+        const item = [1, 2, 3, 4, 5];
+        for(aa of item){
+            console.log(aa);
+        }
+        for(index of item.keys()){
+            console.log(index);
+        }
+       
+    </script>
+</body>
+
+</html>
