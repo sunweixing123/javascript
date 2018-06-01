@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            margin:200px 300px;
+            position:relative;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            float: left;
+            transition: all .5s;
+            position: relative;
+            cursor: pointer;
+        }
+        .box:hover{
+            height:250px;
+            border-bottom:#ccc 10px solid;
+            
+        }
+        .box:hover .circle{
+            width: 70px;
+            height: 70px;
+            border:5px #ccc solid;
+            background-color: rgb(196, 186, 196);
+        }
+        
+        .div1{
+            background-color: #f00;
+        }
+        .div2{
+            background-color: rgb(20, 3, 20);
+        }
+        .div3{
+            background-color: rgb(20, 30, 172);
+        }
+        .div4{
+            background-color: rgb(189, 131, 23);
+        }
+        .div5{
+            background-color: rgb(36, 201, 124);
+        }
+        .div6{
+            background-color: rgb(169, 184, 38);
+        }
+        .box .circle{
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            position:absolute;
+            top:50%;
+            left:50%;
+            /* margin-top:-25px;
+            margin-left:-25px; */
+            transform: translate(-50%,-50%);
+            transition: all .5s;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box div1"><div class="circle"></div></div>
+        <div class="box div2"><div class="circle"></div></div>
+        <div class="box div3"><div class="circle"></div></div>
+        <div class="box div4"><div class="circle"></div></div>
+        <div class="box div5"><div class="circle"></div></div>
+        <div class="box div6"><div class="circle"></div></div>
+
+
+    </div>
+
+    
+</body>
+</html>
