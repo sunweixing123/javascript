@@ -2,9 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>商品</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            width: 400px;
+            margin: 200px auto;
+        }
+        #app h1{
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+        }
+        #app li{
+            font-size:20px;
+            position: relative;
+            margin-top: 10px;
+            color:#ccc;
+            background-color: #000;
+            height: 70px;
+            line-height:70px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #app li span{
+            position: absolute;
+            left: 15px;
+        }
+        #app li input{
+            margin-top: 30px;
+            position: absolute;
+            right:15px;
+            cursor: pointer;
+        }
+        .selected{
+            background: #f00;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="app">
+    <h1>TODOLIST</h1>
+    <div class="head"><button @click="clearall()">删除</button> <button>添加</button></div>
+    <ul id="list">
+        <li :class="{selected:obj.ischoose}" v-for="(obj,index) in arr" @click="add(obj)"> <input type="checkbox" value="" @click.stop=><span @click.stop="clear(obj.index,$event)">[x]</span>{{obj.name}}     {{obj.sprice}}</li>
+    </ul>
+    <h1>{{num}}</h1>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="vue.js"></script>
+    <script>
+         new Vue({
+            el : "#app",
+            data : {
+                arr:[{
+                  name :'衣服',
+                    sprice:50,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'裤子',
+                    sprice:60,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'帽子',
+                    sprice:70,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'电脑',
+                    sprice:5000,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'iphone',
+                    sprice:6000,
+                    pd:0,
+                    ischoose:false,
+                },{
+                    name:'电视',
+                    sprice:4000,
+                    pd:0,
+                    ischoose:false,
+                }],
+                num:0,
+            },
+            methods:{
+                add(obj){
+                    obj.ischoose=!obj.ischoose;
+//                    for(obj of this.arr){
+//
+//                    }
+//                    console.log(obj.pd);
+//                    if(obj.pd==0){
+//                        this.num+=obj.price;
+////                        e.target.style.background="#f00";
+//                        obj.pd++;
+//                        obj.ischoose=!obj.ischoose;
+//                    }else{
+////                        e.target.style.background="#000";
+//                        this.num-=obj.sprice;
+//                        obj.pd--;
+//                        obj.ischoose=false;
+//                    }
+//                    console.log(p);
+
+                },
+//                clear(i,e){
+//                    this.arr.splice(i,1);
+////                    for(obj of this.arr){
+////                    }
+////                    if((this.num - n) >= 0){
+////                        this.num-=n;
+////                    }
+////                    if(obj.pd>=0){
+////                        obj.pd-=1;
+////                    }else{
+////                        e.target.style.background="#000";
+////                    }
+//
+//                },
+//                clearall(){
+////                    if($('#list li input').checked==true){
+////                        $("#list li").display='none';
+////                        console.log($('#list li'));
+////                    }
+//                }
+            }
+        })
+
+    </script>
+</div>
 </body>
 </html>

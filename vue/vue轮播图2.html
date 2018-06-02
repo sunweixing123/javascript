@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            border: 0;
+        }
+        #container{
+            width: 520px;
+            height: 280px;
+            border:1px solid;
+            margin:100px auto;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        #container #imgs{
+            width: 2500px;
+            height: 280px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #container img{
+            float: left;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="container">
+    <div id="imgs">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+    </div>
+</div>
+
 </body>
 </html>
