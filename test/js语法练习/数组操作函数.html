@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // var item = [1, 2, 3, 4, 5];
+        // var item1 = [6, 7, 8];
+        // var item2 = [1];
+        // console.log(Array.isArray(item)); //判断是否是数组
+        // item.push(6); //数组尾部添加
+        // console.log(item);
+        // item.pop(); //尾部删除一项
+        // console.log(item);
+        // item.shift(); //删除首项
+        // console.log(item);
+        // item.unshift(1); //在首项添加元素
+        // console.log(item);
+        // item.reverse(); //反序排列数组
+        // console.log(item);
+        // item.sort(); //按顺序排列数组
+        // console.log(item);
+        // item1 = item.concat(6); //返回一个新数组
+        // console.log(item1);
+        // item2 = item1.slice(1, 5);
+        // console.log(item2);
+        // var item3 = item.splice(1, 3) //功能最多，可以删除，增加，替换
+        // console.log(item3);
+        // var item4 = item.splice(1, 0, 7, 8, 9)
+        // var colors = ["red", "green", "blue"];
+        // var removed = colors.splice(0, 1); // 删除第一项
+        // alert(colors); // green,blue
+        // alert(removed); // red，返回的数组中只包含一项
+        // removed = colors.splice(1, 0, "yellow", "orange"); // 从位置 1 开始插入两项
+        // alert(colors); // green,yellow,orange,blue
+        // alert(removed); // 返回的是一个空数组
+        // removed = colors.splice(1, 1, "red", "purple"); // 插入两项，删除一项
+        // alert(colors); // green,red,purple,orange,blue
+        // alert(removed); // yellow，返回的数组中只包含一项
+
+        // var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        // alert(numbers.indexOf(4)); //3
+        // alert(numbers.lastIndexOf(4)); //5
+        // alert(numbers.indexOf(4, 4)); //5
+        // alert(numbers.lastIndexOf(4, 4)); //3
+        // var person = {
+        //     name: "Nicholas"
+        // };
+        // var people = [{
+        //     name: "Nicholas"
+        // }];
+        // var morePeople = [person];
+        // alert(people.indexOf(person)); //-1
+        // alert(morePeople.indexOf(person)); //0
+
+        //every()： 对数组中的每一项运行给定函数， 如果该函数对每一项都返回 true， 则返回 true。
+        // filter()： 对数组中的每一项运行给定函数， 返回该函数会返回 true 的项组成的数组。
+        //forEach()： 对数组中的每一项运行给定函数。 这个方法没有返回值。
+        // map()： 对数组中的每一项运行给定函数， 返回每次函数调用的结果组成的数组。
+        // some()： 对数组中的每一项运行给定函数， 如果该函数对任一项返回 true， 则返回 true。
+
+        var array = [1, 2, 3, 4, 5]
+        var item = array.filter(function (item, index, array) {
+            //参数： 值 索引 源数组
+            // return array;
+            // return item;
+            // return index;
+            return (item > 3);
+        })
+        console.log(item);
+
+        var item1 = array.map(function (item, index, array) {
+            return (item > 3);
+        })
+        console.log(item1);
+
+        var item2 = array.every(function (item, index, array) {
+            return (item > 3);
+        })
+        console.log(item2);
+
+        var item3 = array.some(function (item, index, array) {
+            return (item > 3);
+        })
+        console.log(item3);
+
+        var item4 = array.forEach(function (item, index, array) {
+            console.log(item, index);
+        })
+
+        var item5 = array.reduce(function (prev, cur, index, array) {
+            console.log(prev, cur);
+        })
+
+      //  使用 reduce() 方法可以执行求数组中所有值之和的操作， 比如：
+
+
+
+        1
+        var values = [1, 2, 3, 4, 5];
+        2
+        var sum = values.reduce(function (prev, cur, index, array) {
+            3
+            return prev + cur;
+            4
+        });
+// 5 alert(sum); //15
+
+        // 第一次执行回调函数： 1 + 2
+        // 第二次执行回调函数： 3 + 3
+        // 第三次执行回调函数： 6 + 4
+        // 第四次执行回调函数： 10 + 5
+
+
+        // join() 方法是一个非常实用的方法， 它把当前Array的每个元素都用指定的字符串连接起来， 然后返回连接后的字符串
+
+        var arr = ['A', 'B', 'C', 1, 2, 3];
+        var arr1 = arr.join('-'); // 'A-B-C-1-2-3'
+        console.log(arr1);
+    </script>
+</body>
+
+</html>
