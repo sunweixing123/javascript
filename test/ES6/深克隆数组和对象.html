@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+         //let items = [5, 6, 7, 8, 9];
+        // let clone = [...items];
+        // let clone1 = items;
+        //let b = items.concat([]);
+        //console.log(b);
+        // items = [6, 7, 8];
+        // console.log(clone);
+        // console.log(clone1);
+
+
+
+        let obj = {
+            name: 'zs',
+            age: 18,
+            school: 'nongda'
+        }
+
+        // function cloneObj(obj) {
+        //     var obj1 = {};
+        //     for (item in obj) {
+        //         console.log(item);
+        //         obj1.item = obj.item;
+        //     }
+        // }
+        // cloneObj(obj);
+        // console.log(obj1);
+
+        function easyClone(obj) {
+            var newObj = {};
+            for (var prop in obj) {
+                newObj[prop] = obj[prop];
+            }
+            return newObj;
+        }
+        function deepClone(obj){
+            var newObj = {};
+            for(var prop in obj){
+                newObj[prop] = obj[prop];
+                if(typeof prop === 'object'){
+                    deepClone(prop);
+                }
+            }
+        }
+
+
+        //ES6语法
+         //var obj4 = {...obj};
+        //obj.name="lisi";
+        var obj2 = easyClone(obj);
+        // var obj3 = deepClone(obj);
+         //console.log(obj4);
+        // console.log(obj3);
+        console.log(obj2);
+    </script>
+</body>
+</html>

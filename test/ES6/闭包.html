@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul class="list">
+        <li class="test">aaa</li>
+        <li class="test">sss</li>
+        <li class="test">ddd</li>
+        <li class="test">fff</li>
+        <li class="test">ggg</li>
+    </ul> -->
+    <script>
+        function createFunction(){
+            var result = new Array();
+            for(var i=0;i<10;i++){
+                // result[i]=function(){
+                //     return i;
+                // };
+
+                result[i]=function(num){
+                    return function(){
+                        return num;
+                    };
+                }(i);//闭包
+            }
+            return result;
+        }
+       
+        
+
+        // function foo(){
+        //     var i=5;
+        //     function f1(){
+        //         console.log(i); 
+        //     }
+        //     return f1;
+        // };
+        // var result=foo();
+        // result();
+
+        
+    
+    
+    </script>
+</body>
+</html>
