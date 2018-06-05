@@ -1,68 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>QQ音乐</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        .container{
-            width: 1226px;
+
+        .container {
+            width: 300px;
             margin: 0 auto;
             background-color: #CCCCCC;
 
         }
-        .container ul{
+
+        .container ul {
             width: 200px;
             margin: 0 auto;
         }
-        li{
+
+        li {
             list-style: none;
         }
-        #play{
+
+        #play {
             display: block;
             margin: 0 auto;
         }
 
+        .concorl {
+            width: 50px;
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .concorl button {
+            cursor: pointer;
+        }
+        .container div{
+            width: 200px;
+            margin:0 auto;
+        }
+        image{
+            display: block;
+            margin:0 auto;
+        }
     </style>
 
 
 </head>
+
 <body>
-<div class="container">
-    <audio id="play" src="https://api.hibai.cn/music/Music/Music?id=299604&type=url" controls="controls"></audio>
-    <ul id="list">
+    <div class="container">
+        <!-- <audio id="play" src="https://api.hibai.cn/music/Music/Music?id=299604&type=url" controls="controls"></audio> -->
 
-    </ul>
-</div>
+    </div>
+    <div class="concorl">
+        <button id="prev">上一首</button>
+        <button id="next">下一首</button>
+    </div>
 
-<script src="jquery-3.2.1.js"></script>
-<script>
-    $.post('https://api.hibai.cn/api/index/index',
-        {
-            "TransCode": "020112",
-            "OpenId": "123456789",
-            "Body": {
-                "SongListId": "141998290"
-            }
-        },
-    function(res){
-        const src=[];
-        console.log(res);
-        for(var i=0;i<res.Body.length;i++){
-            src.push(res.Body[i].url);
-            const obj1=$(this).obj;
-            $('#list').prepend('<li>'+res.Body[i].author+'</li>');
-            $('#list').prepend('<li>'+res.Body[i].title+'</li>');
-            $('#list').prepend('<image src='+res.Body[i].pic+' width="200px" height="200px" style="cursor: pointer";></image>');
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $.post('https://api.hibai.cn/api/index/index', {
+                "TransCode": "020112",
+                "OpenId": "123456789",
+                "Body": {
+                    "SongListId": "141998290"
+                }
+            },
+            function (res) {
+                var item = 1;
+                var that = this;
+                const src = [];
+                console.log(res);
+                $('.container').prepend('<audio id="play" controls="controls" src=' + res.Body[item].url +
+                    '>  </audio>');
+                $('.container').prepend('<div>' + res.Body[item].author + '</div>');
+                $('.container').prepend('<div>' + res.Body[item].title + '</div>');
+                $('.container').prepend('<image src=' + res.Body[item].pic +
+                    ' width="200px" height="200px" style="cursor: pointer";></image>');
+                $('#next').on('click', () => {
+                    //$('#play').remove();
+                    $('.container').empty();
+                    // console.log(this);
+                    item++;
+                    console.log(item);
+                    $('.container').prepend('<audio id="play" controls="controls" src=' + res.Body[item].url +
+                        '>  </audio>');
+                    console.log(this);
+                    $('.container').prepend('<div>' + res.Body[item].author + '</div>');
+                    $('.container').prepend('<div>' + res.Body[item].title + '</div>');
+                    $('.container').prepend('<image src=' + res.Body[item].pic +
+                        ' width="200px" height="200px" style="cursor: pointer";></image>');
 
-    }},'json'
-    )
+                });
 
+                // for (var i = 0; i < res.Body.length; i++) {
+                //     src.push(res.Body[i].url);
+                //     const obj1 = $(this).obj;
+                //     $('#list').prepend('<li>' + res.Body[i].author + '</li>');
+                //     $('#list').prepend('<li>' + res.Body[i].title + '</li>');
+                //     $('#list').prepend('<image src=' + res.Body[i].pic +
+                //         ' width="200px" height="200px" style="cursor: pointer";></image>');
 
-
-</script>
+                // }
+            }, 'json'
+        )
+    </script>
 </body>
+
 </html>
