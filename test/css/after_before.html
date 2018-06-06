@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test{
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            background-color: #f00;
+            
+        }
+        .test::after{
+            content:'';
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+        }
+        .test::before{
+            content:'';
+            display:inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+        }
+        p::after{
+            content:'孙伟星';    
+        }
+        p::before{
+            content:'kobe';    
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="test"></div>
+    <p>名字：</p>
+</body>
+</html>
