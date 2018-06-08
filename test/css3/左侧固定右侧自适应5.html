@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            display: table;
+        }
+
+        .left {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+            display: table-cell;
+        }
+
+        .right {
+            height: 200px;
+            background-color: #000;
+            display: table-cell;
+        }
+
+        /* 利用table-cell可以实现宽度自适应布局。
+
+        table-cell有一些比较好用的属性，比如垂直居中，自适应高度宽度等，
+        
+        为元素设置table-cell布局之后，元素的margin失效，padding有效，
+
+        而且一旦元素设置了float或者absolute，则table-cell也会失效。
+
+        table-cell不兼容IE6,7.但是可以通过触发hasLayout来实现近似的效果。 */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>
