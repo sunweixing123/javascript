@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var promise = new Promise(function (resolve, reject) {
+        //     // resolve('ok');
+        //     reject();
+        // });
+        // promise.then(function (value) {
+        //     console.log(value);
+        // }).catch(function () {
+        //     console.log('error');
+        // });
+
+
+
+        // const tasks = [];
+        // for (var i = 0; i < 5; i++) { // 这里 i 的声明不能改成 let，如果要改该怎么做？
+        //     ((j) => {
+        //         tasks.push(new Promise((resolve) => {
+        //             setTimeout(() => {
+        //                 console.log(new Date, j);
+        //                 resolve(); // 这里一定要 resolve，否则代码不会按预期 work
+        //             }, 1000 * j); // 定时器的超时时间逐步增加
+        //         }));
+        //     })(i);
+        // }
+
+        // Promise.all(tasks).then(() => {
+        //     setTimeout(() => {
+        //         console.log(new Date, i);
+        //     }, 1000); // 注意这里只需要把超时设置为 1 秒
+        // });
+
+
+
+
+        // const tasks = []; // 这里存放异步操作的 Promise
+        // const output = (i) => new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         console.log(new Date, i);
+        //         resolve();
+        //     }, 1000 * i);
+        // });
+
+        // // 生成全部的异步操作
+        // for (var i = 0; i < 5; i++) {
+        //     tasks.push(output(i));
+        // }
+
+        // // 异步操作完成之后，输出最后的 i
+        // Promise.all(tasks).then(() => {
+        //     setTimeout(() => {
+        //         console.log(new Date, i);
+        //     }, 1000);
+        // });
+
+        // function runAsync(callback) {
+        //     setTimeout(function () {
+        //         console.log('执行完成');
+        //         callback('随便什么数据');
+        //     }, 2000);
+        // }
+
+        // runAsync(function (data) {
+        //     console.log(data);
+        // });
+    </script>
+</body>
+
+</html>
