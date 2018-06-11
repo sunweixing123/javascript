@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+
+    </div>
+    <script>
+        var oDiv = document.getElementById('container');
+
+        // img.src = '../images/1.jpg';
+
+        var li = [1, 2, 3, 4];
+        var imgList = ['../images/1.jpg', '../images/1.jpg', '../images/1.jpg', '../images/1.jpg', '../images/1.jpg']
+        var obj = {
+            'name': 'lisi',
+            'age': 18,
+            'school': 'nongda'
+        }
+
+        function getImage(list) {
+            if (list instanceof Array) {
+                console.log(list + '是数组');
+                // for(value in list){
+                //     console.log(value);
+                //     oDiv.appendChild(img);
+                //     img.src = 'value';
+                //     img.style='width:300px;height:400px;';
+                // }
+                for (var i = 0; i < 5; i++) {
+                    oDiv.appendChild(img);
+                }
+            } else {
+                console.log(list + '不是数组');
+            }
+
+        }
+        for (var i = 0; i < 5; i++) {
+            var img = document.createElement('img');
+            img.style = 'width:100px;height:100px;';
+            oDiv.appendChild(img);
+            img.setAttribute('src', imgList[i]);
+        }
+        // getImage(li);
+        // getImage(obj);
+        // console.log(typeof (li));
+    </script>
+</body>
+
+</html>
