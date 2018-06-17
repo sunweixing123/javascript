@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1,5,4,7];
+        var arr2 = [2,3,6,8];
+        function functiongetRes(arr1, arr2) {
+            var len1 = arr1.length,
+                len2 = arr2.length,
+                i = 0,
+                j = 0,
+                k = 0,
+                res = new Array(len1 + len2);
+
+            while (i < len1 && j < len2) {
+                res[k++] = arr1[i] < arr2[j] ? arr1[i++] : arr2[j++];
+            }
+            while(i < len1) res[k++] = arr1[i++];
+            while(j < len2) res[k++] = arr2[j++];
+            return res;
+        }
+        console.log(functiongetRes(arr1,arr2));
+    </script>
+</body>
+
+</html>

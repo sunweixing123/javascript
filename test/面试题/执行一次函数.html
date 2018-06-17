@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var isOnce = 1;
+        function once(aa){
+            if(isOnce){
+                console.log(aa);
+            }else{
+                console.log('error');
+            }
+            isOnce = 0;
+        }
+        once('sunweixing');
+        once('sunweixing');
+        once('sunweixing');        
+        once('sunweixing');        
+                
+    </script>
+</body>
+</html>
