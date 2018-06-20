@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var url =
+        //     'https://www.sogou.com/sogou?query=substr%E5%87%BD%E6%95%B0&ie=utf8&_ast=1529410944&_asf=null&w=01029901&pid=sogou-wsse-add7a04804967197&duppid=1&cid=&s_from=result_up&sut=3282&sst0=1529410916240&lkt=0%2C0%2C0&sugsuv=003DC15DDEAB4B645B1F0919C2559258&sugtime=1529410916240'
+
+        // function GetRequest(location) {
+        //     var url = location.search; //获取url中"?"符后的字串   
+        //     var theRequest = new Object();
+            
+        //         var str = substr(url,1);
+        //         strs = str.split("&");
+        //         for (var i = 0; i < strs.length; i++) {
+        //             theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                
+        //     }
+        //     return theRequest;
+        // }
+        // console.log(GetRequest(url));
+        // var Request = new Object();
+        // Request = GetRequest(url);
+        // console.log(Request);
+        // var obj = {};
+
+        // obj['img'] = 'lala';
+        // console.log(obj);
+
+        function getQueryString() {
+            var qs = location.search.substr(1), // 获取url中"?"符后的字串  
+                args = {}, // 保存参数数据的对象
+                items = qs.length ? qs.split("&") : [], // 取得每一个参数项,
+                item = null,
+                len = items.length;
+
+            for (var i = 0; i < len; i++) {
+                item = items[i].split("=");
+                var name = decodeURIComponent(item[0]),
+                    value = decodeURIComponent(item[1]);
+                if (name) {
+                    args[name] = value;
+                }
+            }
+            return args;
+        }
+    </script>
+</body>
+
+</html>

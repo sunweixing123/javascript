@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li id="li">111</li>
+        <li id="li">222</li>
+        <li id="li">333</li>
+        <li id="li">444</li>
+        <li id="li">555</li>
+    </ul>
+    <script>
+        var oUl = document.getElementById('list');
+        var aLi = oUl.getElementsByTagName('li');
+        console.log(aLi.length);
+        // for(var i=0;i<aLi.length;i++){
+        //     aLi[i].onclick=function(){
+
+        //         console.log(i);
+        //     }
+        // }
+
+        // for(let i=0;i<aLi.length;i++){
+        //     aLi[i].onclick=function(){
+
+        //         console.log(i);
+        //     }
+        // }
+
+        //闭包
+        for (var i = 0; i < aLi.length; i++) {
+            (function (num) {//num是形参 接受i的值
+                aLi[i].onclick = function () {
+                    console.log(num);
+                };
+            })(i)//i是实参
+        }
+    </script>
+</body>
+
+</html>
